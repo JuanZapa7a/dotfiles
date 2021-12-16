@@ -43,11 +43,11 @@ set undoreload=10000
 
 " I disabled the arrow keys to force myself to only use hjkl.
 "
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
+"noremap <Up> <Nop>
+"noremap <Down> <Nop>
+"noremap <Left> <Nop>
+"noremap <Right> <Nop>
+"
 " ## Spelling
 "
 set spelllang=es_es,en_gb
