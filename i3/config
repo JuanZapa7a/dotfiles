@@ -208,6 +208,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 #bindsym $mod+Shift+9 move container to workspace $ws9
 #bindsym $mod+Shift+0 move container to workspace $ws10
 
+
+# Opening Applications in a Specific Workspace
 assign [class="URxvt" instance="urxvt" ] $term
 assign [class="firefox" instance="Navigator"] $www
 assign [class="Thunar" instance="thunar" ] $file
@@ -222,6 +224,14 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+
+# Simple wallpaper
+# Your lock screen can simply display an image. To do so, add the following to your configuration:
+set $i3lockwall i3lock -i  ~/Imágenes/wallpaper/d4779g7-06e74a55-2298-468a-b9c3-80a3364e2c5b.png 
+set $i3lockwall sh ~/.config/i3/scripts/lock.sh
+bindsym $mod+CTRL+Shift+l exec --no-startup -id $i3lockwall
+
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -230,10 +240,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 1 px or 1 ppt
-        bindsym k resize grow height 1 px or 1 ppt
-        bindsym l resize shrink height 1 px or 1 ppt
-        bindsym ntilde resize grow width 1 px or 1 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 1 px or 1 ppt
