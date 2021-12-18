@@ -228,8 +228,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Simple wallpaper
 # Your lock screen can simply display an image. To do so, add the following to your configuration:
 set $i3lockwall i3lock -i  ~/Imágenes/wallpaper/d4779g7-06e74a55-2298-468a-b9c3-80a3364e2c5b.png 
-set $i3lockwall sh ~/.config/i3/scripts/lock.sh
-bindsym $mod+CTRL+Shift+l exec --no-startup -id $i3lockwall
+#set $i3lockwall sh ~/.config/i3/scripts/lock.sh
+#bindsym $mod+CTRL+Shift+l exec --no-startup -id $i3lockwall
 
 
 # resize window (you can also use the mouse for that)
@@ -281,7 +281,7 @@ mode "$mode_launcher" {
 set $mode_system System (l)ock, l(e)gout, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 bindsym $mod+p mode "$mode_system"
 mode "$mode_system" {
-  bindsym l exec --no-startup-id i3lock, mode "default"
+  bindsym l exec --no-startup-id i3lock -i ~/Imágenes/wallpaper/d4779g7-06e74a55-2298-468a-b9c3-80a3364e2c5b.png , mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
   bindsym s exec --no-startup-id systemctl suspend, mode "default"
   bindsym h exec --no-startup-id systemctl hibernate, mode "default"
