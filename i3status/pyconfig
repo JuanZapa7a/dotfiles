@@ -93,11 +93,12 @@ volume_status {
     #    (80, "#8B00FF"),
     #    (90, "#FFFFFF")
     #]
+    cache_timeout=0.5
 }
 
 backlight {
   #format = "☼: {level}%"
-  #cache_timeout = 1
+  cache_timeout = 0.5
   #path = “/home/juan/.config/i3/brightness”
   #device=
   #device_path="/sys/class/backlight/intel_backlight/brightness"
