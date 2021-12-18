@@ -58,7 +58,8 @@ workspace_auto_back_and_forth yes
 
 # start a terminal
 exec --no-startup-id urxvtd -o -q -f
-bindsym $mod+Return exec urxvtc 
+bindsym $mod+Return exec urxvtc
+bindsym $mod+Shift+Return exec gnome-terminal
 #--no-startup-id i3-sensible-terminal
 #uxrtv or i3-sensible-terminal 
 
@@ -138,83 +139,83 @@ bindsym $mod+z focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.i
-#set $ws1 "1"
-#set $ws2 "2"
-#set $ws3 "3"
-#set $ws4 "4"
-#set $ws5 "5"
-#set $ws6 "6"
-#set $ws7 "7"
-#set $ws8 "8"
-#set $ws9 "9"
-#set $ws10 "10"
-
-#Here’s my own config as an example:
-set $term "1: term"
-set $www "2: www"
-set $file "3: file"
-set $mail "4: mail"
-set $doc "5: doc"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+#Here’s my own config as an example:
+#set $term "1: term"
+#set $www "2: www"
+#set $file "3: file"
+#set $mail "4: mail"
+#set $doc "5: doc"
+#set $ws6 "6"
+#set $ws7 "7"
+#set $ws8 "8"
+#set $ws9 "9"
+#set $ws10 "10"
+
 # switch to workspace
-#bindsym $mod+1 workspace $ws1
-#bindsym $mod+2 workspace $ws2
-#bindsym $mod+3 workspace $ws3
-#bindsym $mod+4 workspace $ws4
-#bindsym $mod+5 workspace $ws5
-#bindsym $mod+6 workspace $ws6
-#bindsym $mod+7 workspace $ws7
-#bindsym $mod+8 workspace $ws8
-#bindsym $mod+9 workspace $ws9
-#bindsym $mod+0 workspace $ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # my config
-bindsym $mod+1 workspace $term
-bindsym $mod+2 workspace $www
-bindsym $mod+3 workspace $file
-bindsym $mod+4 workspace $mail
-bindsym $mod+5 workspace $doc
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+#bindsym $mod+1 workspace $term
+#bindsym $mod+2 workspace $www
+#bindsym $mod+3 workspace $file
+#bindsym $mod+4 workspace $mail
+#bindsym $mod+5 workspace $doc
+#bindsym $mod+6 workspace 6
+#bindsym $mod+7 workspace 7
+#bindsym $mod+8 workspace 8
+#bindsym $mod+9 workspace 9
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $term
-bindsym $mod+Shift+2 move container to workspace $www
-bindsym $mod+Shift+3 move container to workspace $file
-bindsym $mod+Shift+4 move container to workspace $mail
-bindsym $mod+Shift+5 move container to workspace $doc
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+#bindsym $mod+Shift+1 move container to workspace $term
+#bindsym $mod+Shift+2 move container to workspace $www
+#bindsym $mod+Shift+3 move container to workspace $file
+#bindsym $mod+Shift+4 move container to workspace $mail
+#bindsym $mod+Shift+5 move container to workspace $doc
+#bindsym $mod+Shift+6 move container to workspace 6
+#bindsym $mod+Shift+7 move container to workspace 7
+#bindsym $mod+Shift+8 move container to workspace 8
+#bindsym $mod+Shift+9 move container to workspace 9
+#bindsym $mod+Shift+0 move container to workspace 10
 
 # move focused container to workspace
-#bindsym $mod+Shift+1 move container to workspace $ws1
-#bindsym $mod+Shift+2 move container to workspace $ws2
-#bindsym $mod+Shift+3 move container to workspace $ws3
-#bindsym $mod+Shift+4 move container to workspace $ws4
-#bindsym $mod+Shift+5 move container to workspace $ws5
-#bindsym $mod+Shift+6 move container to workspace $ws6
-#bindsym $mod+Shift+7 move container to workspace $ws7
-#bindsym $mod+Shift+8 move container to workspace $ws8
-#bindsym $mod+Shift+9 move container to workspace $ws9
-#bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 
 # Opening Applications in a Specific Workspace
-assign [class="URxvt" instance="urxvt" ] $term
-assign [class="firefox" instance="Navigator"] $www
-assign [class="Thunar" instance="thunar" ] $file
-assign [class="Prospect Mail" instance="prospect mail"] $mail
-assign [class="Zathura" instance="org.pwmt.zathura"] $doc
+#assign [class="URxvt" instance="urxvt" ] $term
+#assign [class="firefox" instance="Navigator"] $www
+#assign [class="Thunar" instance="thunar" ] $file
+#assign [class="Prospect Mail" instance="prospect mail"] $mail
+#assign [class="Zathura" instance="org.pwmt.zathura"] $doc
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -227,7 +228,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Simple wallpaper
 # Your lock screen can simply display an image. To do so, add the following to your configuration:
-set $i3lockwall i3lock -i  ~/Imágenes/wallpaper/d4779g7-06e74a55-2298-468a-b9c3-80a3364e2c5b.png 
+#set $i3lockwall i3lock -i  ~/Imágenes/wallpaper/d4779g7-06e74a55-2298-468a-b9c3-80a3364e2c5b.png 
 #set $i3lockwall sh ~/.config/i3/scripts/lock.sh
 #bindsym $mod+CTRL+Shift+l exec --no-startup -id $i3lockwall
 
@@ -293,14 +294,50 @@ mode "$mode_system" {
   bindsym Escape mode "default"
 }
 
-title_align center #title_align left|center|right 
-default_border none # no title bars, normal|none|pixel
-hide_edge_borders smart # hide_edge_borders none|vertical|horizontal|both|smart
+#title_align center #title_align left|center|right 
+#default_border none # no title bars, normal|none|pixel
+#hide_edge_borders smart # hide_edge_borders none|vertical|horizontal|both|smart
+
+
+# floating pop up automatically
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+# Example of defining a floating window
+for_window [class="Arandr"] floating enable
+
+#for_window [class="URxvt*"] border pixel 1
+
+## Terminal scratchpad
+#for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
+#bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
+#exec --no-startup-id urxvtc -name urxvt_scratchpad
+for_window [instance="urxvt_scratchpad"] floating enable;
+for_window [instance="urxvt_scratchpad"] move to scratchp, scratchpad show;
+for_window [instance="urxvt_scratchpad"] resize grow left 300, resize grow right 300, resize grow down 200, resize grow up 200, move scratchpad;
+bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
+exec --no-startup-id urxvt -name urxvt_scratchpad
+
+
+#
+## htop scratchpad
+for_window [instance="htop_scratchpad"] floating enable, move to scratchpad, scratchpad show;
+for_window [instance="htop_scratchpad"] resize grow left 300, resize grow right 300, resize grow down 200, resize grow up 200, move scratchpad;
+bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show;
+exec --no-startup-id urxvt -name htop_scratchpad -e htop
+
+## quick terminal
+#exec --no-startup-id urxvt -name metask
+#for_window [instance="metask"] floating enable;
+#for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize growwidth 683px; move scratchpad
+#bindsym $mod+Shift+y [instance="metask"] scratchpad show 
+
+
 
 
 #exec --no-startup-id picom -cCf -r 8 -o 0.90 -l 0 -t 0 -I 0.99 -O 0.99 -D 2 -m 0.90 -i 0.90 -e 0.90 --experimental-backend --no-fading-openclose --sw-opti --inactive-dim 0.4 -b
  
-exec_always --no-startup-id picom -b && $refresh_i3status
+exec_always --no-startup-id picom -b --experimental-backends && $refresh_i3status
 
 ##### i3-gaps ##############
 for_window [class=".*"] border pixel 2 #*
@@ -313,7 +350,6 @@ smart_borders no_gaps
 # Take a screenshot upon pressing $mod+x (select an area) $mod+shift+x (entire screen)
 bindsym --release $mod+x exec --no-startup-id scrot -s -q 75 /tmp/latest-screenshot.png
 bindsym --release $mod+Shift+x exec --no-startup-id scrot -q 75 /tmp/latest-screenshot.png
-
 
 
 # Default colors
@@ -391,13 +427,11 @@ bar{
   }
 }
 
-        ##Powerline
+
+##Powerline
 #bar {
 #  position top
 #  font pango:MesloLGS NF bold italic 11
 #  status_command python3 ~/.local/lib/python3.8/site-packages/powerline/bindings/i3/powerline-i3.py | ~/.virtualenvs/weather/bin/python ~/.config/i3status/weather.py --wrap-i3-status --api-key  a1825a037a34e1250f3cfa5405e6cd22 --city-id 2520058 --position 8 
 #
 #}
-
-
-
