@@ -294,9 +294,9 @@ mode "$mode_system" {
   bindsym Escape mode "default"
 }
 
-#title_align center #title_align left|center|right 
-#default_border none # no title bars, normal|none|pixel
-#hide_edge_borders smart # hide_edge_borders none|vertical|horizontal|both|smart
+title_align center #title_align left|center|right 
+default_border none # no title bars, normal|none|pixel
+hide_edge_borders smart # hide_edge_borders none|vertical|horizontal|both|smart
 
 
 # floating pop up automatically
