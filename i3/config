@@ -308,9 +308,6 @@ for_window [class="Arandr"] floating enable
 #for_window [class="URxvt*"] border pixel 1
 
 ## Terminal scratchpad
-#for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
-#bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
-#exec --no-startup-id urxvtc -name urxvt_scratchpad
 for_window [instance="urxvt_scratchpad"] floating enable, border none;
 for_window [instance="urxvt_scratchpad"] move to scratchpad, scratchpad show;
 for_window [instance="urxvt_scratchpad"] resize grow left 300, resize grow right 300, resize grow down 200, resize grow up 200, move scratchpad;
@@ -323,12 +320,16 @@ for_window [instance="htop_scratchpad"] resize grow left 300, resize grow right 
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show;
 exec --no-startup-id urxvt -name htop_scratchpad -e htop
 
-## quick terminal
-#exec --no-startup-id urxvt -name metask
-#for_window [instance="metask"] floating enable;
-#for_window [instance="metask"] move scratchpad; 
-##[instance="metask"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize growwidth 683px; move scratchpad
-#bindsym $mod+Shift+y [instance="metask"] scratchpad show 
+
+## Terminal scratchpad
+#for_window [instance="urxvt_pad"] move to scratchpad , border none;
+#bindsym $mod+Shift+y [instance="urxvt_pad"] scratchpad show;
+#exec urxvtc -name urxvt_pad
+#
+## htop scratchpad
+#for_window [instance="htop_pad"] move to scratchpad , border none;
+#bindsym $mod+Shift+u [instance="htop_pad"] scratchpad show;
+#exec urxvtc -name htop_pad -e htop
 
 #exec --no-startup-id picom -cCf -r 8 -o 0.90 -l 0 -t 0 -I 0.99 -O 0.99 -D 2 -m 0.90 -i 0.90 -e 0.90 --experimental-backend --no-fading-openclose --sw-opti --inactive-dim 0.4 -b
  
