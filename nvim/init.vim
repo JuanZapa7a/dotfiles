@@ -98,8 +98,9 @@ set grepformat=%f:%l:%c:%m
 "https://vim.fandom.com/wiki/Highlight_current_line
 set cursorline  " Highlight current line
 set cursorcolumn " Highlight current column
-hi CursorLine   cterm=bold ctermbg=16 ctermfg=white guibg=gray guifg=white
-hi CursorColumn cterm=bold ctermbg=16 ctermfg=white guibg=gray guifg=white
+hi CursorLine cterm=bold ctermbg=16 ctermfg=white "guibg=gray guifg=white
+hi CursorColumn cterm=bold ctermbg=16 ctermfg=white "guibg=gray guifg=white
+
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " typing \c will toggle highlighting on and off
 nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
@@ -119,4 +120,4 @@ let g:airline_theme='dark'
 " ## NerdTree
 "
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
-map <F2> :NERDTreeToggle<CR>
+map <F2> :NERDTreeToggle<CR

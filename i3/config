@@ -12,7 +12,9 @@
 set $mod Mod4
 
 exec --no-startup-id bing.sh
+exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id nm-applet
+exec --no-startup-id bluetooth-applet
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -49,10 +51,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessDown exec  --no-startup-id brightnessctl set 2%- && $refresh_i3status
 bindsym XF86MonBrightnessUp exec  --no-startup-id brightnessctl set +2% && $refresh_i3status
 
-# Use brightnessctl to adjust bright
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
 # Automatical back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
 
@@ -61,7 +59,7 @@ exec --no-startup-id urxvtd -o -q -f
 bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+Return exec gnome-terminal
 #--no-startup-id i3-sensible-terminal
-#uxrtv or i3-sensible-terminal 
+#urxvt or i3-sensible-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -262,7 +260,7 @@ bindsym $mod+r mode "resize"
 
 # Press $mod+o followed by either f, t, Escape or Return to launch firefox,
 # thunderbird or return to the default mode, respectively.
-set $mode_launcher Launch: [f]irefox [p]ycharm [g]imp [n]autilus [t]eams [s]ettings [c]ode
+set $mode_launcher Launch: [f]irefox [p]ycharm [g]imp [n]autilus t[h]unar [t]eams [s]ettings [c]ode
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
@@ -270,6 +268,7 @@ mode "$mode_launcher" {
   bindsym p exec pycharm-professional
   bindsym g exec gimp
   bindsym n exec nautilus
+  bindsym h exec thunar
   bindsym t exec teams
   bindsym s exec gnome-control-center
   bindsym c exec code
@@ -282,7 +281,7 @@ mode "$mode_launcher" {
 set $mode_system System (l)ock, l(e)gout, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 bindsym $mod+p mode "$mode_system"
 mode "$mode_system" {
-  bindsym l exec --no-startup-id i3lock -i ~/Imágenes/wallpaper/d4779g7-06e74a55-2298-468a-b9c3-80a3364e2c5b.png , mode "default"
+  bindsym l exec --no-startup-id i3lock -i ~/Imágenes/wallpaper/trainresize.png , mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
   bindsym s exec --no-startup-id systemctl suspend, mode "default"
   bindsym h exec --no-startup-id systemctl hibernate, mode "default"
@@ -312,16 +311,14 @@ for_window [class="Arandr"] floating enable
 #for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
 #bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
 #exec --no-startup-id urxvtc -name urxvt_scratchpad
-for_window [instance="urxvt_scratchpad"] floating enable;
-for_window [instance="urxvt_scratchpad"] move to scratchp, scratchpad show;
+for_window [instance="urxvt_scratchpad"] floating enable, border none;
+for_window [instance="urxvt_scratchpad"] move to scratchpad, scratchpad show;
 for_window [instance="urxvt_scratchpad"] resize grow left 300, resize grow right 300, resize grow down 200, resize grow up 200, move scratchpad;
-bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
+bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show; 
 exec --no-startup-id urxvt -name urxvt_scratchpad
 
-
-#
 ## htop scratchpad
-for_window [instance="htop_scratchpad"] floating enable, move to scratchpad, scratchpad show;
+for_window [instance="htop_scratchpad"] floating enable, border none, move to scratchpad, scratchpad show;
 for_window [instance="htop_scratchpad"] resize grow left 300, resize grow right 300, resize grow down 200, resize grow up 200, move scratchpad;
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show;
 exec --no-startup-id urxvt -name htop_scratchpad -e htop
@@ -329,11 +326,9 @@ exec --no-startup-id urxvt -name htop_scratchpad -e htop
 ## quick terminal
 #exec --no-startup-id urxvt -name metask
 #for_window [instance="metask"] floating enable;
-#for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize growwidth 683px; move scratchpad
+#for_window [instance="metask"] move scratchpad; 
+##[instance="metask"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize growwidth 683px; move scratchpad
 #bindsym $mod+Shift+y [instance="metask"] scratchpad show 
-
-
-
 
 #exec --no-startup-id picom -cCf -r 8 -o 0.90 -l 0 -t 0 -I 0.99 -O 0.99 -D 2 -m 0.90 -i 0.90 -e 0.90 --experimental-backend --no-fading-openclose --sw-opti --inactive-dim 0.4 -b
  
