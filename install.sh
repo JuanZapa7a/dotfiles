@@ -29,6 +29,9 @@ ln -sf "$HOME/dotfiles/picom/picom.conf" "$HOME/.config/picom/picom.conf"
 mkdir -p "$HOME/.config/neofetch"
 ln -sf "$HOME/dotfiles/neofetch/config.conf" "$HOME/.config/neofetch/config.conf" 
 
+# ~/.config/zathura
+mkdir -p "$HOME/.config/zathura"
+ln -sf "$HOME/dotfiles/zathura/zathurarc" "$HOME/.config/zathura/zathurarc" 
 
 
 
