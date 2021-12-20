@@ -29,6 +29,11 @@ ln -sf "$HOME/dotfiles/picom/picom.conf" "$HOME/.config/picom/picom.conf"
 mkdir -p "$HOME/.config/neofetch"
 ln -sf "$HOME/dotfiles/neofetch/config.conf" "$HOME/.config/neofetch/config.conf" 
 
+# ~/.local/bin/bing.sh
+mkdir -p "$HOME/.local/bin"
+ln -sf "$HOME/dotfiles/.local/bin/bing.sh" "$HOME/.local/bin/bing.sh" 
+
+
 
 
 
