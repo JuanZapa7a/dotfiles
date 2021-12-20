@@ -29,21 +29,11 @@ ln -sf "$HOME/dotfiles/picom/picom.conf" "$HOME/.config/picom/picom.conf"
 mkdir -p "$HOME/.config/neofetch"
 ln -sf "$HOME/dotfiles/neofetch/config.conf" "$HOME/.config/neofetch/config.conf" 
 
-<<<<<<< HEAD
 # ~/.local/bin/bing.sh
 mkdir -p "$HOME/.local/bin"
 ln -sf "$HOME/dotfiles/.local/bin/bing.sh" "$HOME/.local/bin/bing.sh" 
 
-
-=======
 # ~/.config/zathura
 mkdir -p "$HOME/.config/zathura"
 ln -sf "$HOME/dotfiles/zathura/zathurarc" "$HOME/.config/zathura/zathurarc" 
->>>>>>> 18924ef68ab2dcfe2b801cadba5d2b9f84012848
-
-
-
-
-
-
 
