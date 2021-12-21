@@ -37,3 +37,8 @@ ln -sf "$HOME/dotfiles/.local/bin/bing.sh" "$HOME/.local/bin/bing.sh"
 mkdir -p "$HOME/.config/zathura"
 ln -sf "$HOME/dotfiles/zathura/zathurarc" "$HOME/.config/zathura/zathurarc" 
 
+# ~/.config/kitty
+mkdir -p "$HOME/.config/kitty"
+ln -sf "$HOME/dotfiles/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf" 
+
+
