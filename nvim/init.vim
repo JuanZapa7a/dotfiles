@@ -11,7 +11,14 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline' "status bar can be customized
 Plug 'vim-airline/vim-airline-themes' "themes for vim-airline
-
+Plug 'SirVer/ultisnips' "snipets
+Plug 'honza/vim-snippets' "snipets
+Plug 'junegunn/limelight.vim' "dim all lines except the current one when turned on
+Plug 'godlygeek/tabular' " tabular plugin is used to format tables
+Plug 'elzr/vim-json' "JSON front matter highlight plugin
+Plug 'plasticboy/vim-markdown' "Markdown syntax highlighting
+Plug 'vim-pandoc/vim-pandoc' "pandoc integrates Vim/pandoc document converter
+Plug 'vim-pandoc/vim-pandoc-syntax' "pandoc (markdown) syntax highlight
 call plug#end()
 
 " ..........................................................
@@ -121,3 +128,129 @@ let g:airline_theme='dark'
 "
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
 map <F2> :NERDTreeToggle<CR
+
+" # Ultisnips
+"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"  " use <Tab> to trigger autocompletion
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" For example, if we type link and then press <Tab>, it will be expanded to the following text:
+" [Text](http://www.url.com)
+"
+" The setting UltiSnipsJumpForwardTrigger and UltiSnipsJumpBackTrigger set up the shortcut key 
+" to go to next and previous text area of a snippet, making the snippet editing more convenient.
+
+" # Limelight
+"
+" Limelight [0.0 ~ 1.0] turn on, Limelight! turn off, Limelight!! [0.0 ~ 1.0] Toggle Limelight
+" Invoke :Limelight for a visual range
+" nmap <Leader>l <Plug>(Limelight)
+" xmap <Leader>l <Plug>(Limelight)
+
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+        
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 1
+
+""  Beginning/end of paragraph
+""  When there's no empty line between the paragraphs
+""  and each paragraph starts with indentation
+"  let g:limelight_bop = '^\s'
+"  let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
+
+
+" # vim-markdown
+"
+" It helps us to see the structure of the source code more clearly.
+" It provides a lot of functionalities such as folding, conceal etc
+" Conceal hide the true structure of the sintaxis of markdown
+"
+" Conceal for me is not good
+"
+" Shortcuts
+"   ]]: go to next header
+"   [[: go to previous header
+" Command
+"   Toc: create a vertical window of table of contents
+"   TableFormat: format the table under current cursor
+
+" disable header folding
+let g:vim_markdown_folding_disabled = 1
+
+" do not use conceal feature, the implementation is not so good
+let g:vim_markdown_conceal = 0
+
+" disable math tex conceal feature
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+
+" support front matter of various format
+let g:vim_markdown_frontmatter = 1  " for YAML format
+let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+let g:vim_markdown_json_frontmatter = 1  " for JSON format
+
+" # vim-pandoc-syntax
+"
+" It provides more syntax highlight and better conceal features
+" t is designed to work with vim-pandoc. To use it as a standalone plugin, we should add the following settings in our Neovim configuration file:
+"
+""augroup pandoc_syntax
+""    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+"augroup END
+
+" # vim-pandoc
+"
+
+let mapleader="\\"
+
+" Call compile
+" Open the PDF from /tmp/
+function! Preview()
+        :call Compile()<CR><CR>
+        execute "! zathura /tmp/op.pdf &"
+endfunction
+
+" [1] Get the extension of the file
+" [2] Apply appropriate compilation command
+" [3] Save PDF as /tmp/op.pdf
+function! Compile()
+        let extension = expand('%:e')
+        if extension == "ms"
+                execute "! groff -ms % -T pdf > /tmp/op.pdf"
+        elseif extension == "tex"
+                execute "! pandoc -f latex -t latex % -o /tmp/op.pdf"
+        elseif extension == "md"
+                execute "! pandoc % -s -o /tmp/op.pdf"
+        endif
+endfunction
+
+" map \ + p to preview
+noremap <leader>p :call Preview()<CR><CR><CR>
+
+" map \ + q to compile
+noremap <leader>q :call Compile()<CR><CR>
+
+
+
