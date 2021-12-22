@@ -41,4 +41,6 @@ ln -sf "$HOME/dotfiles/zathura/zathurarc" "$HOME/.config/zathura/zathurarc"
 mkdir -p "$HOME/.config/kitty"
 ln -sf "$HOME/dotfiles/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf" 
 
-
+# ~/.screenlayout
+mkdir -p "$HOME/.screenlayout"
+ln -sf "$HOME/dotfiles/screenlayout/screens.sh" "$HOME/.screenlayout/screens.sh" 
