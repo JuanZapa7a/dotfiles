@@ -27,7 +27,7 @@ exec --no-startup-id bluetooth-applet
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-font pango:MesloLGS NF 11
+font pango:MesloLGS NF 14
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -105,6 +105,11 @@ bindsym $mod+Right workspace next
 bindsym $mod+Up workspace next
 bindsym $mod+Left workspace prev
 bindsym $mod+Down workspace prev
+
+# Moving workspaces between screens 
+bindsym $mod+CTRL+Right move workspace to output right
+bindsym $mod+CTRL+Left move workspace to output left
+
 
 # split in horizontal orientation
 bindsym $mod+CTRL+h split h
@@ -400,28 +405,71 @@ client.background       #ffffff
 
 #### py3status
 bar{
-  position top
-  # set bar font
-  font pango:MesloLGS NF bold 11
-  separator_symbol "|"
-  #separator_symbol " "
-  #separator_symbol ""
-  #status_command py3status -c ~/.config/i3status/pyconfig | ~/.virtualenvs/weather/bin/python ~/.config/i3status/weather.py --wrap-i3-status --api-key  a1825a037a34e1250f3cfa5405e6cd22 --city-id 2520058 --position 8 
-  status_command py3status -c ~/.config/i3status/pyconfig 
-  i3bar_command i3bar -t
-  colors {
-    background #0f0f0f8f
-    statusline #ffffffff
-    separator  #909090ff
+    position top
+    output edP-1-1
+    mode hide
+    hidden_state hide
+    modifier Mod1
+    # set bar font
+    font pango:MesloLGS NF bold 14
+    separator_symbol "|"
+    #separator_symbol " "
+    #separator_symbol ""
+    #status_command py3status -c ~/.config/i3status/pyconfig | ~/.virtualenvs/weather/bin/python ~/.config/i3status/weather.py --wrap-i3-status --api-key  a1825a037a34e1250f3cfa5405e6cd22 --city-id 2520058 --position 8 
+    status_command py3status -c ~/.config/i3status/pyconfig 
+    i3bar_command i3bar -t
+    colors {
+        background #0f0f0f8f
+        statusline #ffffffff
+        separator  #909090ff
     
-#   focused_workspace  #4c7899 #285577 #ffffff
-#   active_workspace   #333333 #5f676a #ffffff
-#   inactive_workspace #333333 #222222 #888888
-#   urgent_workspace   #2f343a #900000 #ffffff
-#   binding_mode       #2f343a #900000 #ffffff
-#   background #26323888
-  }
+    #   focused_workspace  #4c7899 #285577 #ffffff
+    #   active_workspace   #333333 #5f676a #ffffff
+    #   inactive_workspace #333333 #222222 #888888
+    #   urgent_workspace   #2f343a #900000 #ffffff
+    #   binding_mode       #2f343a #900000 #ffffff
+    #   background #26323888
+    }
 }
+
+bar {
+    # put the bar at the top of each monitor
+    position top
+    output DP-1-2
+    mode hide
+    hidden_state hide
+    modifier Mod1
+    # use i3status with i3status.conf for bar contents
+    #status_command i3status exec /home/juan/.config/i3status/net-speed.sh
+    #status_command exec /home/juan/.config/i3status/net-speed.sh
+    status_command i3status | ~/.virtualenvs/weather/bin/python ~/.config/i3status/weather.py --wrap-i3-status --api-key  a1825a037a34e1250f3cfa5405e6cd22 --city-id 2520058 --position 6 
+    #status_command i3status exec /home/juan/.config/i3status/openweather.sh
+    #status_command exec /home/juan/.config/i3status/any_position_wrapper.sh
+    # set bar font
+    font pango:MesloLGS NF bold italic 14
+    separator_symbol "|:|"
+    # show tray icons on the primary monitor
+    # tray_output primary
+    #status_command i3status
+    #
+    #binding_mode_indicator yes
+    #
+    i3bar_command i3bar -t
+    #
+    colors {
+        background #00000077
+        statusline #ffffffff
+        separator  #ff0000ff
+    #    
+    #    focused_workspace  #4c7899 #285577 #ffffff
+    #    active_workspace   #333333 #5f676a #ffffff
+    #    inactive_workspace #333333 #222222 #888888
+    #    urgent_workspace   #2f343a #900000 #ffffff
+    #    binding_mode       #2f343a #900000 #ffffff
+    #    background #26323888
+    }
+}
+
 
 
 ##Powerline
@@ -431,3 +479,10 @@ bar{
 #  status_command python3 ~/.local/lib/python3.8/site-packages/powerline/bindings/i3/powerline-i3.py | ~/.virtualenvs/weather/bin/python ~/.config/i3status/weather.py --wrap-i3-status --api-key  a1825a037a34e1250f3cfa5405e6cd22 --city-id 2520058 --position 8 
 #
 #}
+
+#exec --no-startup-id xrandr --output DP-1-2 --auto --left-of eDP-1-1 --auto &
+
+exec --no-startup-id ~/.screenlayout/screens.sh
+workspace 1 output DP-1-2
+workspace 2 output eDP-1-1
+
