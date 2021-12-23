@@ -11,6 +11,7 @@ ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim" # -s symlink
 ln -sf "$HOME/dotfiles/X11/.Xresources" "$HOME/.Xresources"
 ln -sf "$HOME/dotfiles/X11/.vimrc" "$HOME/.vimrc"
 ln -sf "$HOME/dotfiles/X11/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$HOME/dotfiles/X11/.zshrc" "$HOME/.zshrc"
 
 # ~/.config/i3 #
 mkdir -p "$HOME/.config/i3"
