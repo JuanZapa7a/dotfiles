@@ -1,5 +1,4 @@
-# DotFiles
-dot files for me :)
+# dot files for me :)
 
 This README.md tries to explain each one the this dot files.
 
@@ -47,4 +46,8 @@ We must run this for compile `\+q` and `\+p` to preview the 'pdf' document.
 # ![screenshot](https://d7lju56vlbdri.cloudfront.net/var/ezwebin_site/storage/images/_aliases/img_1col/noticias/el-zorro-rojo-actual-deriva-de-una-unica-especie-extinta/8242423-1-esl-MX/El-zorro-rojo-actual-deriva-de-una-unica-especie-extinta.jpg)
 
 
-Y si quiero crear algo con encabezado etc entonces como? A mi me gustaría que cada vez que guardo se actualizara.
+Y si quiero crear algo con encabezado etc entonces como? A mi me gustaría que cada vez que guardo se actualizara. Con la cena más espectacular del mundo mundial. esperemos que esto sea lo mas bonito del mundo.
+
+## Primera sección ##
+
+Veamos como funciona las extensiones y si todo funciona medio bien. El SAS desemplar a 8000 enfermeros. Van a faltar mas enfermeras en el mundo.

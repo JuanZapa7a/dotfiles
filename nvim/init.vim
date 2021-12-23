@@ -103,10 +103,11 @@ set grepformat=%f:%l:%c:%m
 "colorscheme wal
 "set background=dark
 "https://vim.fandom.com/wiki/Highlight_current_line
-
+"
+set cursorline " Highlight current line
 set cursorcolumn " Highlight current column
-hi CursorLine cterm=bold ctermbg=16 ctermfg=white "guibg=gray guifg=white
-hi CursorColumn cterm=bold ctermbg=16 ctermfg=white "guibg=gray guifg=white
+hi CursorLine   cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
+hi CursorColumn cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
 
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " typing \c will toggle highlighting on and off
