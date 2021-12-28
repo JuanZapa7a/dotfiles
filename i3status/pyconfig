@@ -62,13 +62,13 @@ weather_owm {
     unit_snow = 'mm'
     unit_wind = 'msec'
     unit_temperature = 'c'
-    icon_wind = ''
+    icon_wind = '煮'
     icon_temperature = ''
-    icon_sunrise = ''
-    icon_sunset = ''
+    icon_sunrise = ''
+    icon_sunset = ''
     icon_humidity = ''
     icon_cloud = ''
-    icon_pressure = ''
+    icon_pressure = ''
 }
 
 spotify {
@@ -97,7 +97,7 @@ volume_status {
 }
 
 backlight {
-  #format = "☼: {level}%"
+  format = ": {level}%"
   cache_timeout = 0.5
   #path = “/home/juan/.config/i3/brightness”
   #device=
