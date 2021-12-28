@@ -95,7 +95,7 @@ autoload -U compinit && compinit
 
 source $(dirname $(gem which colorls))/tab_complete.sh
 #alias lc='colorls -la --sd'
-alias lsd='colorls'
+alias ls='colorls'
 #alias lt='colorls -a --sd --tree'
 #alias ld='colorls  -ad'
 
@@ -143,6 +143,14 @@ alias date='date "+%R %A, %d %B %Y"'
 date
 # problem with mc running in alacritty solved using tmux or this alias
 alias mc='mc -x'
+
+#alias gru='sshfs -p6536 juan@212.128.45.104:/opt/juan /Users/juanzapata/PycharmProjects/gru'
+#alias ugru='diskutil umount /Users/juanzapata/Pycharmprojects/gru
+alias cgru='ssh -p6536 -Y juan@212.128.45.104'
+
+#alias aorus='sshfs -p22 juan@212.128.45.18:/media/ST4000/juan /Users/juanzapata/PycharmProjects/aorus'
+#alias uaorus='diskutil umount /Users/juanzapata/Pycharmprojects/aorus
+alias caorus='ssh -p22 -Y juan@212.128.45.18'
 
 ## for powerlevel10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme
