@@ -11,6 +11,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline' "status bar can be customized
 Plug 'vim-airline/vim-airline-themes' "themes for vim-airline
+Plug 'arcticicestudio/nord-vim' "Nord theme
 Plug 'SirVer/ultisnips' "snipets
 Plug 'honza/vim-snippets' "snipets
 Plug 'junegunn/limelight.vim' "dim all lines except the current one when turned on
@@ -118,12 +119,14 @@ nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 " and have the highlighting stay where it is when the cursor is moved 
 
 " ## Airline
-"
+
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiettos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 let g:airline_powerline_fonts = 1 " Cargar fuente Powerline y símbolos (ver nota)
 "let g:airline_theme= 'icebergDark'
-let g:airline_theme='dark'
+" # Nord
+let g:airline_theme='base16_nord'
+colorscheme nord
 
 " ## NerdTree
 "

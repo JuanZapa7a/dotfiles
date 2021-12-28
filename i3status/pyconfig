@@ -6,12 +6,12 @@
 # ß
 # If the above line is not correctly displayed, fix your editor first!
 
-#general {
-#    colors = true
-#    interval = 1
-#    align = 'center'
-#	   output_format = "i3bar"
-#}
+general {
+    colors = true
+    interval = 1
+    align = 'center'
+	output_format = "i3bar"
+}
 
 #py3status {
 #   align = 'left'
@@ -64,7 +64,7 @@ weather_owm {
     unit_temperature = 'c'
     icon_wind = '煮'
     icon_temperature = ''
-    icon_sunrise = ''
+    icon_sunrise = ''
     icon_sunset = ''
     icon_humidity = ''
     icon_cloud = ''
@@ -142,5 +142,4 @@ memory {
 clock {
   format = "{Europe/Madrid}"
   format_time = ' %A, %d %B de %Y (%R:%S) '
-
 }

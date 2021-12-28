@@ -84,7 +84,6 @@ plugins=(git
   virtualenvwrapper
   sudo
   zsh-autosuggestions
-  sudo
   web-search
   copydir
   zsh-syntax-highlighting
@@ -92,12 +91,6 @@ plugins=(git
 )
 #for zsh-completions plugin
 autoload -U compinit && compinit
-
-source $(dirname $(gem which colorls))/tab_complete.sh
-#alias lc='colorls -la --sd'
-alias ls='colorls'
-#alias lt='colorls -a --sd --tree'
-#alias ld='colorls  -ad'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,6 +119,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+source $(dirname $(gem which colorls))/tab_complete.sh
+#alias lc='colorls -la --sd'
+alias ls='colorls'
+#alias lt='colorls -a --sd --tree'
+#alias ld='colorls  -ad'
+
 
 # for virtualenv and virtualenvwrapper
 export PATH=/home/juan/.local/bin${PATH:+:${PATH}}
@@ -143,6 +143,8 @@ alias date='date "+%R %A, %d %B %Y"'
 date
 # problem with mc running in alacritty solved using tmux or this alias
 alias mc='mc -x'
+# bat is cat with wings
+alias cat='bat'
 
 #alias gru='sshfs -p6536 juan@212.128.45.104:/opt/juan /Users/juanzapata/PycharmProjects/gru'
 #alias ugru='diskutil umount /Users/juanzapata/Pycharmprojects/gru
@@ -164,3 +166,5 @@ fpath+=${ZDOTDIR:-~}/.zsh_function
 #export STARSHIP_CACHE=~/.config/starship/cache
 ## starship  init script for zsh
 #eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
