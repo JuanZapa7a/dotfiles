@@ -9,9 +9,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'powerline/powerline'
+Plug 'arcticicestudio/nord-vim' "Nord theme
 Plug 'vim-airline/vim-airline' "status bar can be customized
 Plug 'vim-airline/vim-airline-themes' "themes for vim-airline
-Plug 'arcticicestudio/nord-vim' "Nord theme
 Plug 'SirVer/ultisnips' "snipets
 Plug 'honza/vim-snippets' "snipets
 Plug 'junegunn/limelight.vim' "dim all lines except the current one when turned on
@@ -37,7 +37,7 @@ set pumblend=0
 set hidden
 " Forbidding you to modify a file which is already open in another process
 set noswapfile
-highlight ColorColumn ctermbg=16 " set color for colorcolumn
+"highlight ColorColumn ctermbg=16 " set color for colorcolumn
 set colorcolumn=80  " Set & show limit column 
 set scrolloff=3  " Display at least 3 lines around you cursor
 set diffopt+=vertical  " Always use vertical diffs
@@ -101,14 +101,14 @@ set grepformat=%f:%l:%c:%m
 " ## Theme & Colorscheme
 "
 "set termguicolors  " Activa true colors en la terminal y quita powerline
-"colorscheme wal
+colorscheme nord
 "set background=dark
 "https://vim.fandom.com/wiki/Highlight_current_line
 "
 set cursorline " Highlight current line
 set cursorcolumn " Highlight current column
-hi CursorLine   cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
-hi CursorColumn cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
+"hi CursorLine   cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
+"hi CursorColumn cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
 
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " typing \c will toggle highlighting on and off
@@ -118,15 +118,15 @@ nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 " To highlight the current virtual column (column after tabs are expanded), 
 " and have the highlighting stay where it is when the cursor is moved 
 
-" ## Airline
-
+"" ## Airline
+"
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiettos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 let g:airline_powerline_fonts = 1 " Cargar fuente Powerline y símbolos (ver nota)
-"let g:airline_theme= 'icebergDark'
-" # Nord
-let g:airline_theme='base16_nord'
-colorscheme nord
+""let g:airline_theme= 'icebergDark'
+"" # Nord
+"let g:airline_theme='base16_nord'
+""colorscheme nord
 
 " ## NerdTree
 "
