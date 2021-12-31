@@ -5,7 +5,7 @@
 ! Version:    0.1.0
 ! Repository: https://github.com/arcticicestudio/nord-xresources
 ! License:    MIT
-
+!
 !#define nord0 #2E3440
 !#define nord1 #3B4252
 !#define nord2 #434C5E
@@ -26,7 +26,7 @@
 !*.foreground:   nord4
 !*.background:   nord0
 !*.cursorColor:  nord4
-!*fading: 35
+!*fading: 90
 !*fadeColor: nord3
 !
 !*.color0: nord1
@@ -45,13 +45,14 @@
 !*.color13: nord15
 !*.color14: nord7
 !*.color15: nord6
-
-! special nORD MODIFIED
+!
+! MySpecial NORD
 *.foreground:   #d8dee9
-*.background:   #2E3440
+*.background:   #2e3440
 *.cursorColor:  #d8dee9
-!*fading: 10
-!*fadeColor: #81a1c1
+!*fading:       15
+!*fadeColor:    #ffffff
+
 
 ! black
 *.color0:       #3b4252
@@ -71,7 +72,7 @@
 
 ! blue
 *.color4:       #5c8fc1
-*.color12:      #81a1c1
+*.color12:      #51a1c1
 
 ! magenta
 *.color5:       #b482ab
@@ -231,7 +232,7 @@
 !
 !
 !Character Fonts
-URxvt*font: xft:MesloLGS NF:pixelsize=18:antialias=true
+URxvt*font: xft:MesloLGS NF:pixelsize=20:antialias=true
 URxvt*letterSpace: -0
 ! windows default
 URxvt*borderLess: false

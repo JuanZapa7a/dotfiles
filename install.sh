@@ -1,17 +1,16 @@
 #!/bin/bash
 
 # nvim #
-
 mkdir -p "$HOME/.config/nvim" # -p if the directory already exist (no problem)
 mkdir -p "$HOME/.config/nvim/undo"
 ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim" # -s symlink -f file that already exits
 
 # ~/ #
-
 ln -sf "$HOME/dotfiles/X11/.Xresources" "$HOME/.Xresources"
 ln -sf "$HOME/dotfiles/X11/.vimrc" "$HOME/.vimrc"
 ln -sf "$HOME/dotfiles/X11/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$HOME/dotfiles/X11/.zshrc" "$HOME/.zshrc"
+ln -sf "$HOME/dotfiles/X11/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # ~/.config/i3 #
 mkdir -p "$HOME/.config/i3"
@@ -44,4 +43,9 @@ ln -sf "$HOME/dotfiles/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 
 # ~/.screenlayout
 mkdir -p "$HOME/.screenlayout"
-ln -sf "$HOME/dotfiles/screenlayout/screens.sh" "$HOME/.screenlayout/screens.sh" 
+ln -sf "$HOME/dotfiles/screenlayout/screens.sh" "$HOME/.screenlayout/screens.sh"
+
+# ~/.local/skins
+mkdir -p "$HOME/.local/share/mc"
+ln -sf "$HOME/dotfiles/.local/share/mc/skins/nord.ini" "$HOME/.layout/share/mc/skins/nord.ini"
+

@@ -101,9 +101,12 @@ set grepformat=%f:%l:%c:%m
 " ## Theme & Colorscheme
 "
 "set termguicolors  " Activa true colors en la terminal y quita powerline
-colorscheme nord
-"set background=dark
+"set background=dark " with nord backgorund dark is not readable some commentaries
 "https://vim.fandom.com/wiki/Highlight_current_line
+"
+"" # Nord
+colorscheme nord
+
 "
 set cursorline " Highlight current line
 set cursorcolumn " Highlight current column
@@ -123,10 +126,8 @@ nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiettos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 let g:airline_powerline_fonts = 1 " Cargar fuente Powerline y símbolos (ver nota)
-""let g:airline_theme= 'icebergDark'
-"" # Nord
-"let g:airline_theme='base16_nord'
-""colorscheme nord
+"let g:airline_theme= 'icebergDark'
+let g:airline_theme='nord'
 
 " ## NerdTree
 "
@@ -255,6 +256,5 @@ noremap <leader>p :call Preview()<CR><CR><CR>
 
 " map \ + q to compile
 noremap <leader>q :call Compile()<CR><CR>
-
 
 
