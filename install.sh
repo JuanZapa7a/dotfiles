@@ -47,5 +47,5 @@ ln -sf "$HOME/dotfiles/screenlayout/screens.sh" "$HOME/.screenlayout/screens.sh"
 
 # ~/.local/skins
 mkdir -p "$HOME/.local/share/mc"
-ln -sf "$HOME/dotfiles/.local/share/mc/skins/nord.ini" "$HOME/.layout/share/mc/skins/nord.ini"
+ln -sf "$HOME/dotfiles/.local/share/mc/skins/nord.ini" "$HOME/.local/share/mc/skins/nord.ini"
 
