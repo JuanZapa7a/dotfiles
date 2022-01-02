@@ -39,6 +39,7 @@ order += "spotify"
 order += "volume_status"
 order += "backlight"
 order += "battery_level"
+order += "keyboard_layout"
 order += "sysdata"
 order += "diskdata"
 order += "weather_owm"
@@ -49,15 +50,15 @@ weather_owm {
     #city = 'Cartagena'
     #country = 'ES'
     #forecast_days = 3
-    format = '[\?color=lightblue {city}, {description}, ({sunrise} {sunset}), {temperature} {wind} [{clouds} {humidity} {pressure} {rain}] 3d·{forecast}]'
+    format = '[\?color=lightblue {city} {description} {sunrise} {sunset} {temperature} {wind} [{clouds} {humidity} {pressure} {rain}] 3d {forecast}]'
     lang = 'es'
-    format_temperature='{icon}·[\?color=all {current:.0f}°{unit} ({min}/{max})°{unit}]'
-    format_wind= '[{icon}·\?if=speed {speed:.0f}m/s({direction})]'
-    format_sunrise = '{icon}·%-H:%M'
-    format_sunset = '{icon}·%-H:%M'
-    format_clouds = '{icon}·{coverage}%'
-    format_humidity = '{icon}·{humidity}%'
-    format_pressure = '{icon}·{pressure}hPa'
+    format_temperature='{icon} [\?color=all {current:.0f}°{unit} ({min}/{max})°{unit}]'
+    format_wind= '[{icon} \?if=speed {speed:.0f}m/s({direction})]'
+    format_sunrise = '{icon} %-H:%M'
+    format_sunset = '{icon} %-H:%M'
+    format_clouds = '{icon} {coverage}%'
+    format_humidity = '{icon} {humidity}%'
+    format_pressure = '{icon} {pressure}hPa'
     unit_rain = 'mm'
     unit_snow = 'mm'
     unit_wind = 'msec'
@@ -72,8 +73,8 @@ weather_owm {
 }
 
 spotify {
-    format = "{title} by {artist} -> {time}"
-    format_down = "no Spotify"
+    format = '[\?color=lightblue {title} by {artist} -> {time}]'
+    format_down = ''
 }
 
 tztime holder__hey_man {
@@ -81,32 +82,29 @@ tztime holder__hey_man {
 }
 
 volume_status {
-    #thresholds = [
-    #    (0, "#FF0000"),
-    #    (10, "#E2571E"),
-    #    (20, "#FF7F00"),
-    #    (30, "#FFFF00"),
-    #    (40, "#00FF00"),
-    #    (50, "#96BF33"),
-    #    (60, "#0000FF"),
-    #    (70, "#4B0082"),
-    #    (80, "#8B00FF"),
-    #    (90, "#FFFFFF")
-    #]
+#    thresholds = [
+#        (0, "#FF0000"),
+#        (10, "#FF9900"),
+#        (20, "#FFFF00"),
+#        (30, "#FFFF99"),
+#        (40, "#00FF00"),
+#        (50, "#00FF99"),
+#        (60, "#00FFFF"),
+#        (70, "#0099FF"),
+#        (80, "#99FFFF"),
+#        (90, "#FFFFFF")
+#    ]
+    format='[\?color=lightblue ♪ {percentage}%]'
     cache_timeout=0.5
 }
 
 backlight {
-  format = ": {level}%"
-  cache_timeout = 0.5
-  #path = “/home/juan/.config/i3/brightness”
-  #device=
-  #device_path="/sys/class/backlight/intel_backlight/brightness"
-  #max_characters = 5
+    format = "[\?color=lightblue  {level}%]" 
+    cache_timeout = 0.5 
 }
 
-
 sysdata{
+    format = '[\?color=lightblue CPU:{cpu_usage}%, Mem:{mem_used}/{mem_total}GB ({mem_used_percent}%)]'
 }
 
 wireless _first_ {
@@ -119,14 +117,32 @@ ethernet _first_ {
         format_down = "Eth: down"
 }
 
-battery_level {
-        format = "{icon}: {percent}%"
-        threshold_bad = 10
+keyboard_layout {
+	cache_timeout = 1
+	format = "[\?color=lightblue  {layout}]"
+}
+
+battery_level{
+    cache_timeout = 10
+	color_bad = "#FF0000"
+	color_charging = "#FCE94F"
+	color_degraded = "#ff7a00"
+	color_good = "#00FF00"
+
+	format_notify_charging = "charging"
+	format_notify_discharging = "discharging {percent}"
+	hide_when_full = False
+    hide_seconds = True
+	notification = True
+	notify_low_level = True
+	blocks = ""
+	charging_character = ""
+	format = "[\?color=lightblue {icon} {percent}% {time_remaining}]"
+	color_charging = "#FFFFFF"
 }
 
 diskdata{
-        #disk= "sda"
-        format = '[\?color=violet Disk:{used}/{total_space}Gb]' 
+        format = '[\?color=lightblue Disk:{used}/{total_space}Gb]' 
 }
 
 loadavg {
@@ -140,6 +156,7 @@ memory {
 }
 
 clock {
-  format = "{Europe/Madrid}"
-  format_time = ' %A, %d %B de %Y (%R:%S) '
+  format = "[\?color=lightblue {Europe/Madrid}]"
+  format_time = '  %A, %d %B de %Y   %R:%S '
+  on_click 1 = "exec --no-startup-id gnome-calendar"
 }

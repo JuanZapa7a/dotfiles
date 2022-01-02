@@ -20,6 +20,7 @@ Plug 'elzr/vim-json' "JSON front matter highlight plugin
 Plug 'plasticboy/vim-markdown' "Markdown syntax highlighting
 Plug 'vim-pandoc/vim-pandoc' "pandoc integrates Vim/pandoc document converter
 Plug 'vim-pandoc/vim-pandoc-syntax' "pandoc (markdown) syntax highlight
+Plug 'PotatoesMaster/i3-vim-syntax' 
 call plug#end()
 
 " ..........................................................
@@ -34,7 +35,7 @@ set clipboard+=unnamedplus " Keep what you copy on the clip-board
 set updatetime=100
 set noshowmode  "Airline muestra la barra de estado
 set pumblend=0
-set hidden
+set hidden "Neovin doesnt complain if a hidden bufer is not saved
 " Forbidding you to modify a file which is already open in another process
 set noswapfile
 "highlight ColorColumn ctermbg=16 " set color for colorcolumn
@@ -110,8 +111,8 @@ colorscheme nord
 "
 set cursorline " Highlight current line
 set cursorcolumn " Highlight current column
-"hi CursorLine   cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
-"hi CursorColumn cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
+hi CursorLine   cterm=bold "ctermbg=16 ctermfg=214 "guibg=gray guifg=white
+hi CursorColumn cterm=bold "ctermbg=16 ctermfg=214 "guibg=gray guifg=white
 
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " typing \c will toggle highlighting on and off

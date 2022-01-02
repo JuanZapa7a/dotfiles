@@ -14,7 +14,8 @@ set $mod Mod4
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id bluetooth-applet
-exec --no-startup-id bing.sh
+exec --no-startup-id app-tray
+exec_always --no-startup-id bing.sh
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -27,7 +28,7 @@ exec --no-startup-id bing.sh
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-#font pango:MesloLGS NF 11
+#font pango:MesloLGS NF 18
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -71,11 +72,12 @@ bindsym $mod+i exec rofi -modi run -show drun -show-icons
 bindsym $mod+Tab exec rofi -show window -show-icons
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'MesloLGS NF-18'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+
 
 # change focus
 bindsym $mod+h focus left
@@ -225,7 +227,6 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -287,7 +288,7 @@ mode "$mode_launcher" {
 set $mode_system System (l)ock, l(e)gout, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 bindsym $mod+p mode "$mode_system"
 mode "$mode_system" {
-  bindsym l exec --no-startup-id i3lock -i ~/Imágenes/wallpaper/nord-background/operating-systems/3840x2160/ubuntu.png , mode "default"
+  bindsym l exec --no-startup-id i3lock -t -b -i ~/Imágenes/wallpaper/nord-backgrounds/operating-systems/3840x2160/ubuntu.png, mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
   bindsym s exec --no-startup-id systemctl suspend, mode "default"
   bindsym h exec --no-startup-id systemctl hibernate, mode "default"
@@ -307,7 +308,6 @@ mode "$mode_system" {
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-
 # Example of defining a floating window
 for_window [class="Arandr"] floating enable
 
@@ -326,16 +326,6 @@ for_window [instance="htop_scratchpad"] floating enable, border none, move to sc
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show;
 exec --no-startup-id urxvt -name htop_scratchpad -e htop
 
-
-## Terminal scratchpad
-#for_window [instance="urxvt_pad"] move to scratchpad , border none;
-#bindsym $mod+Shift+y [instance="urxvt_pad"] scratchpad show;
-#exec urxvtc -name urxvt_pad
-#
-## htop scratchpad
-#for_window [instance="htop_pad"] move to scratchpad , border none;
-#bindsym $mod+Shift+u [instance="htop_pad"] scratchpad show;
-#exec urxvtc -name htop_pad -e htop
 
 #exec --no-startup-id picom -cCf -r 8 -o 0.90 -l 0 -t 0 -I 0.99 -O 0.99 -D 2 -m 0.90 -i 0.90 -e 0.90 --experimental-backend --no-fading-openclose --sw-opti --inactive-dim 0.4 -b
  
@@ -513,7 +503,9 @@ bar {
 #  font pango:MesloLGS NF bold italic 11
 #  status_command python3 ~/.local/lib/python3.8/site-packages/powerline/bindings/i3/powerline-i3.py | ~/.virtualenvs/weather/bin/python ~/.config/i3status/weather.py --wrap-i3-status --api-key  a1825a037a34e1250f3cfa5405e6cd22 --city-id 2520058 --position 8 
 #}
-
+#
+#
+# Multiple Monitors - Can use arandr to find this command.
 exec --no-startup-id xrandr --output DP-1-2 --auto --left-of eDP-1-1 --auto &
 workspace 2 output DP-1-2
 workspace 1 output eDP-1-1

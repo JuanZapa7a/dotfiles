@@ -45,7 +45,12 @@ ln -sf "$HOME/dotfiles/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 mkdir -p "$HOME/.screenlayout"
 ln -sf "$HOME/dotfiles/screenlayout/screens.sh" "$HOME/.screenlayout/screens.sh"
 
-# ~/.local/skins
-mkdir -p "$HOME/.local/share/mc"
+# ~/.local/share/mc/skins
+mkdir -p "$HOME/.local/share/mc/skins"
 ln -sf "$HOME/dotfiles/.local/share/mc/skins/nord.ini" "$HOME/.local/share/mc/skins/nord.ini"
+
+# ~/.zsh_functions
+mkdir -p "$HOME/.zsh_functions"
+ln -sf "$HOME/dotfiles/.zsh_functions/scripts.sh" "$HOME/.zsh_functions/scripts.sh"
+
 

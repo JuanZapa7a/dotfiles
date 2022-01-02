@@ -90,7 +90,8 @@ plugins=(git
   zsh-completions
 )
 #for zsh-completions plugin
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
+autoload -Uz compinit; compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -125,6 +126,10 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 alias ls='colorls'
 #alias lt='colorls -a --sd --tree'
 #alias ld='colorls  -ad'
+# Enabling the Vi Mode
+# Zsh has a Vi mode you can enable by adding the following into your file . zshrc :
+bindkey -v
+export KEYTIMEOUT=1
 
 
 # for virtualenv and virtualenvwrapper
@@ -168,3 +173,5 @@ fpath+=${ZDOTDIR:-~}/.zsh_function
 #eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source ~/.zsh_functions/scripts.sh
