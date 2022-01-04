@@ -6,7 +6,7 @@
  *******************************************************************************/
 
 * {
-	font						: "MesloLGS NF 24";
+	font						: "MesloLGS NF 20";
 	foreground					: #eceff4;
 	background-color			: #2e3440;
 	active-background			: #81a1c1;
