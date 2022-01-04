@@ -33,6 +33,10 @@ ln -sf "$HOME/dotfiles/neofetch/config.conf" "$HOME/.config/neofetch/config.conf
 mkdir -p "$HOME/.local/bin"
 ln -sf "$HOME/dotfiles/.local/bin/bing.sh" "$HOME/.local/bin/bing.sh" 
 
+# ~/.local/share/rofi/themes
+mkdir -p "$HOME/.local/share/rofi/themes"
+ln -sf "$HOME/dotfiles/.local/share/rofi/themes/nord.rasi" "$HOME/.local/share/rofi/themes/nord.rasi" 
+
 # ~/.config/zathura
 mkdir -p "$HOME/.config/zathura"
 ln -sf "$HOME/dotfiles/zathura/zathurarc" "$HOME/.config/zathura/zathurarc" 
@@ -52,5 +56,11 @@ ln -sf "$HOME/dotfiles/.local/share/mc/skins/nord.ini" "$HOME/.local/share/mc/sk
 # ~/.zsh_functions
 mkdir -p "$HOME/.zsh_functions"
 ln -sf "$HOME/dotfiles/.zsh_functions/scripts.sh" "$HOME/.zsh_functions/scripts.sh"
+
+# ~/.config/rofi
+mkdir -p "$HOME/.config/rofi"
+ln -sf "$HOME/dotfiles/rofi/config.rasi" "$HOME/.config/rofi/config.rasi" 
+
+
 
 

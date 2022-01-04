@@ -86,6 +86,6 @@ echo "Saving image to $path$imgName"
 # echo "$copyright" > "$path{$imgName/%.jpg/%.txt}"
 # Writing copyright.
 
-nitrogen --set-zoom-fill "$path$imgName"
-#feh -F   "$path$imgName"
+#nitrogen --set-zoom-fill "$path$imgName"
+feh -no-fehbg --bg-fill "$path$imgName"
 

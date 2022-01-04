@@ -6,86 +6,118 @@
 ! Repository: https://github.com/arcticicestudio/nord-xresources
 ! License:    MIT
 
-!#define nord0 #2E3440
-!#define nord1 #3B4252
-!#define nord2 #434C5E
-!#define nord3 #4C566A
-!#define nord4 #D8DEE9
-!#define nord5 #E5E9F0
-!#define nord6 #ECEFF4
-!#define nord7 #8FBCBB
-!#define nord8 #88C0D0
-!#define nord9 #81A1C1
-!#define nord10 #5E81AC
-!#define nord11 #BF616A
-!#define nord12 #D08770
-!#define nord13 #EBCB8B
-!#define nord14 #A3BE8C
-!#define nord15 #B48EAD
-!
-!*.foreground:   nord4
-!*.background:   nord0
-!*.cursorColor:  nord4
-!*fading: 5
-!*fadeColor: nord3
-!
-!*.color0: nord1
-!*.color1: nord11
-!*.color2: nord14
-!*.color3: nord13
-!*.color4: nord9
-!*.color5: nord15
-!*.color6: nord8
-!*.color7: nord5
-!*.color8: nord3
-!*.color9: nord11
-!*.color10: nord14
-!*.color11: nord13
-!*.color12: nord9
-!*.color13: nord15
-!*.color14: nord7
-!*.color15: nord6
+
+! Polar Night is made up of four darker colors that are commonly used for 
+! base elements like backgrounds or text color in bright ambiance designs.
+
+#define nord0 #2E3440
+! black
+#define nord1 #3B4252
+
+#define nord2 #434C5E
+! Black bright
+#define nord3 #4C566A
+
+
+!  Snow Storm is made up of three bright colors that are commonly used for 
+!  text colors or base UI elements in bright ambiance designs.
+
+#define nord4 #D8DEE9
+! White
+#define nord5 #E5E9F0
+! white Brifght
+#define nord6 #ECEFF4
+
+! Frost can be described as the heart palette of Nord, a group of four 
+! bluish colors that are commonly used for primary UI component and text 
+! highlighting and essential code syntax elements.
+
+! Cyan Bright
+#define nord7 #8FBCBB
+! Cyan
+#define nord8 #88C0D0
+! Blue and Blue Bright
+#define nord9 #81A1C1
+
+#define nord10 #5E81AC
+
+! Aurora consists of five colorful components reminiscent of the 
+! „Aurora borealis“, sometimes referred to as polar lights or northern lights.
+
+! Red and Red Bright
+#define nord11 #BF616A
+
+#define nord12 #D08770
+! Yellow and Yellow Bright
+#define nord13 #EBCB8B
+! Green and Green Bright
+#define nord14 #A3BE8C
+! Magente and Megente bright
+#define nord15 #B48EAD
+
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
+
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
 !
 ! MySpecial NORD
-*.foreground:   #d8dee9
-*.background:   #2e3440
-*.cursorColor:  #d8dee9
-*fading:        5
-*fadeColor:     #00aaff
-
-
-! black
-*.color0:       #3b4252
-*.color8:       #4c566a
-
-! red
-*.color1:       #bf555f
-*.color9:       #bf616a
-
-! green
-*.color2:       #99be7a
-*.color10:      #a3be8c
-
-! yellow
-*.color3:       #ebc883
-*.color11:      #ebcb8b
-
-! blue
-*.color4:       #5c8fc1
-*.color12:      #51a1c1
-
-! magenta
-*.color5:       #b482ab
-*.color13:      #b48ead
-
-! cyan
-*.color6:       #7dbed0
-*.color14:      #8fbcbb
-
-! white
-*.color7:       #dee5f0
-*.color15:      #eceff4
-
+!*.foreground:   #d8dee9
+!*.background:   #2e3440
+!*.cursorColor:  #d8dee9
+!*fading:        5
+!*fadeColor:     #00aaff
+!
+!
+!! black
+!*.color0:       #3b4252
+!*.color8:       #4c566a
+!
+!! red
+!*.color1:       #bf555f
+!*.color9:       #bf616a
+!
+!! green
+!*.color2:       #99be7a
+!*.color10:      #a3be8c
+!
+!! yellow
+!*.color3:       #ebc883
+!*.color11:      #ebcb8b
+!
+!! blue
+!*.color4:       #5c8fc1
+!*.color12:      #51a1c1
+!
+!! magenta
+!*.color5:       #b482ab
+!*.color13:      #b48ead
+!
+!! cyan
+!*.color6:       #7dbed0
+!*.color14:      #8fbcbb
+!
+!! white
+!*.color7:       #dee5f0
+!*.color15:      #eceff4
+!
 !! special
 !*.foreground:   #a9b1d6
 !*.background:   #1a1b26
