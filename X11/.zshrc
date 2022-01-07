@@ -138,6 +138,11 @@ export WORKON_HOME=/home/juan/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source ~/.local/bin/virtualenvwrapper.sh
 
+# for spitefy
+export SPICETIFY_INSTALL="/home/juan/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"
+
+
 # for CUDA
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 

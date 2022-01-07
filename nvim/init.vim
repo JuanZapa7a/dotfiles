@@ -220,7 +220,8 @@ let g:vim_markdown_json_frontmatter = 1  " for JSON format
 " # vim-pandoc-syntax
 "
 " It provides more syntax highlight and better conceal features
-" t is designed to work with vim-pandoc. To use it as a standalone plugin, we should add the following settings in our Neovim configuration file:
+" t is designed to work with vim-pandoc. To use it as a standalone plugin, we 
+" should add the following settings in our Neovim configuration file:
 "
 ""augroup pandoc_syntax
 ""    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
