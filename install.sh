@@ -61,6 +61,14 @@ ln -sf "$HOME/dotfiles/.zsh_functions/scripts.sh" "$HOME/.zsh_functions/scripts.
 mkdir -p "$HOME/.config/rofi"
 ln -sf "$HOME/dotfiles/rofi/config.rasi" "$HOME/.config/rofi/config.rasi" 
 
+# ~/.config/Polybar
+mkdir -p "$HOME/.config/polybar"
+ln -sf "$HOME/dotfiles/polybar/config.ini" "$HOME/.config/polybar/config.ini" 
 
+# ~/.config/bspwm
+mkdir -p "$HOME/.config/bspwm"
+ln -sf "$HOME/dotfiles/bspwm/bspwmrc" "$HOME/.config/bspwm/bspwmrc" 
 
-
+# ~/.config/sxhkd
+mkdir -p "$HOME/.config/sxhkd"
+ln -sf "$HOME/dotfiles/sxhkd/skhkdrc" "$HOME/.config/sxhkd/sxhkdrc" 
