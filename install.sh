@@ -20,6 +20,8 @@ ln -sf "$HOME/dotfiles/i3/config" "$HOME/.config/i3/config"
 mkdir -p "$HOME/.config/i3status"
 ln -sf "$HOME/dotfiles/i3status/config" "$HOME/.config/i3status/config"
 ln -sf "$HOME/dotfiles/i3status/pyconfig" "$HOME/.config/i3status/pyconfig" 
+ln -sf "$HOME/dotfiles/i3status/weather.py" "$HOME/.config/i3status/weather.py" 
+ln -sf "$HOME/dotfiles/i3status/weatherbspwm.py" "$HOME/.config/i3status/weatherbspwm.py" 
 
 # ~/.config/picom
 mkdir -p "$HOME/.config/picom"
@@ -71,4 +73,4 @@ ln -sf "$HOME/dotfiles/bspwm/bspwmrc" "$HOME/.config/bspwm/bspwmrc"
 
 # ~/.config/sxhkd
 mkdir -p "$HOME/.config/sxhkd"
-ln -sf "$HOME/dotfiles/sxhkd/skhkdrc" "$HOME/.config/sxhkd/sxhkdrc" 
+ln -sf "$HOME/dotfiles/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc" 
