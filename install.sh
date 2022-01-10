@@ -71,6 +71,9 @@ ln -sf "$HOME/dotfiles/polybar/config.ini" "$HOME/.config/polybar/config.ini"
 mkdir -p "$HOME/.config/bspwm"
 ln -sf "$HOME/dotfiles/bspwm/bspwmrc" "$HOME/.config/bspwm/bspwmrc" 
 
-# ~/.config/sxhkd
-mkdir -p "$HOME/.config/sxhkd"
-ln -sf "$HOME/dotfiles/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc" 
+# ~/.zsh_functions/scripts.sh
+mkdir -p "$HOME/.zsh_functions"
+ln -sf "$HOME/dotfiles/.zsh_functions/scripts.sh" "$HOME/.zsh_functions/scripts.sh"
+
+
+
