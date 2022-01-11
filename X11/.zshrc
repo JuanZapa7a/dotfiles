@@ -178,5 +178,10 @@ fpath+=${ZDOTDIR:-~}/.zsh_function
 #eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# for latex
+
+#export PATH=/usr/local/texlive/2021/bin/x86_64-linux${PATH:+:${PATH}}
+#export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info${INFOPATH:+:${INFOPATH}}
+#export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man${MANPATH:+:${MANPATH}}
 
 source ~/.zsh_functions/scripts.sh
