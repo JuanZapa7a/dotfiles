@@ -20,8 +20,10 @@ xrdb -merge ~/.Xresources
 urxvtd -o -q -f
 
 
-bspc monitor eDP-1-1 -d      
-bspc monitor DP-1-2  -d     
+bspc monitor eDP-1-1 -d         
+bspc monitor DP-1-2  -d         
+
+#bspc monitor DP-1-2  -d         
 
 
 bspc config border_width         2
