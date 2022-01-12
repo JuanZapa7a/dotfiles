@@ -180,8 +180,8 @@ fpath+=${ZDOTDIR:-~}/.zsh_function
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # for TeXLive
-export PATH=/usr/local/texlive/2021/bin/x86_64-linux${PATH:+:${PATH}}
-export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info${INFOPATH:+:${INFOPATH}}
-export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man${MANPATH:+:${MANPATH}}
+#export PATH=/usr/local/texlive/2021/bin/x86_64-linux${PATH:+:${PATH}}
+#export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info${INFOPATH:+:${INFOPATH}}
+#export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man${MANPATH:+:${MANPATH}}
 
 source ~/.zsh_functions/scripts.sh
