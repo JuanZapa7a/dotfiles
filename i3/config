@@ -501,6 +501,34 @@ bar {
     }
 }
 
+bar {
+    # put the bar at the top of each monitor
+    position top
+    output DP-0
+    #mode hide
+    #hidden_state hide
+    #modifier Mod1
+     # set bar font
+    font pango:MesloLGS NF bold 14
+    separator_symbol "|"
+    #separator_symbol " "
+    #separator_symbol ""
+    #status_command py3status -c ~/.config/i3status/pyconfig | ~/.virtualenvs/weather/bin/python ~/.config/i3status/weather.py --wrap-i3-status --api-key  a1825a037a34e1250f3cfa5405e6cd22 --city-id 2520058 --position 8 
+    status_command py3status -c ~/.config/i3status/pyconfig 
+    i3bar_command i3bar -t
+    colors {
+        background #2E3440dd
+        statusline #ffffffdd
+        separator  #909090dd
+    
+    #   focused_workspace  #4c7899 #285577 #ffffff
+    #   active_workspace   #333333 #5f676a #ffffff
+    #   inactive_workspace #333333 #222222 #888888
+    #   urgent_workspace   #2f343a #900000 #ffffff
+    #   binding_mode       #2f343a #900000 #ffffff
+    #   background #26323888
+    }
+}
 
 
 ##Powerline
