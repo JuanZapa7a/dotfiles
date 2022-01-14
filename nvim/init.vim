@@ -315,5 +315,5 @@ fun! TeX_fmt()
     endif
 endfun
 
-nmap Q :call TeX_fmt()<CR>
+nmap ñ :call TeX_fmt()<CR>
 " }}}
