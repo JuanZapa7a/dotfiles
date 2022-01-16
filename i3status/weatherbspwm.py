@@ -62,7 +62,7 @@ if __name__ == '__main__':
     p.add_argument('--api-key', type=str, required=True,
                    help='OpenWeatherMap API key')
     p.add_argument('--format', metavar='F',
-            default='{city}, {text_d},  {sunrise}  {sunset}  {temp_c}°C ({temp_c_min}/{temp_c_max})°C  {wind_speed_ms}m/s{wind_direction_arrow}  {humidity}%  {pressure}hPa',
+            default='{city}, {text_d},  {sunrise}  {sunset}  {temp_c}°C ({temp_c_min}/{temp_c_max})°C  {wind_speed_ms}m/s {wind_direction_fuzzy}  {humidity}%  {pressure}hPa',
                    help="format string for output")
     p.add_argument('--position', metavar='P', type=int, default=-2,
                    help="position of output in JSON when wrapping i3status")
