@@ -12,3 +12,7 @@ duckduckgo() {
 lynx -vikeys -accept_all_cookies "https://lite.duckduckgo.com/lite/?q='
 $@'"
 }
+
+onedrive() {
+    sshfs -p22 juan@212.128.45.18:/media/ST4000/juan/OneDrive /home/juan/OneDrive
+}
