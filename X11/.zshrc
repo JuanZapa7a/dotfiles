@@ -156,12 +156,12 @@ alias mc='mc -x'
 # bat is cat with wings
 alias cat='bat'
 
-#alias gru='sshfs -p6536 juan@212.128.45.104:/opt/juan /home/juan/gru'
-alias ugru='diskutil umount /Users/juanzapata/Pycharmprojects/gru
+alias gru='sshfs -p6536 juan@212.128.45.104:/opt/juan /home/juan/gru'
+alias ugru='fusermount -u /home/juan/gru'
 alias cgru='ssh -p6536 -Y juan@212.128.45.104'
 #
-#alias aorus='sshfs -p22 juan@212.128.45.18:/media/ST4000/juan /home/juan/aorus'
-alias uaorus='diskutil umount /Users/juanzapata/Pycharmprojects/aorus
+alias aorus='sshfs -p22 juan@212.128.45.18:/media/ST4000/juan /home/juan/aorus'
+alias uaorus='fusermount -u /home/juan/aorus'
 alias caorus='ssh -p22 -Y juan@212.128.45.18'
 
 ## for powerlevel10k

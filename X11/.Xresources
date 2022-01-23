@@ -256,6 +256,9 @@ URxvt*font: xft:Operator Mono for Powerline:style=Book:size=20,xft:MesloLGS NF:s
 !URxvt*font: xft:Operator Mono for Powerline:style=Book,xft:Inconsolata,xft:Hack NF,xft:MesloLGS NF,xft:SauceCodePro NF
 !URxvt*font: xft:MesloLGS NF:style=Regular:size=14:pixelsize=20:antialias=true
 !URxvt*font: xft:MesloLGS NF:style=Regular:size=20
+!URxvt*font: xft:Operator Mono for Powerline:style=Book:pixelsize=20,xft:MesloLGS NF:style=Regular:pixelsize=20
+!URxvt*font: xft:Meslo iCursive S12:style=Regular:pixelsize=20
+!URxvt*font: xft:SpaceMono Nerd Font Mono:style=Regular:pixelsize=20
 URxvt*letterSpace: 0
 ! windows default
 URxvt*borderLess: false URxvt*externalBorder: 0 URxvt*internalBorder: 4

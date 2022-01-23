@@ -16,3 +16,7 @@ $@'"
 onedrive() {
     sshfs -p22 juan@212.128.45.18:/media/ST4000/juan/OneDrive /home/juan/OneDrive
 }
+uonedrive(){
+    fusermount -u /home/juan/OneDrive
+}            
+           
