@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'powerline/powerline'
 Plug 'arcticicestudio/nord-vim' "Nord theme
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'vim-airline/vim-airline' "status bar can be customized
 Plug 'vim-airline/vim-airline-themes' "themes for vim-airline
 Plug 'SirVer/ultisnips' "snipets
@@ -22,6 +23,8 @@ Plug 'vim-pandoc/vim-pandoc' "pandoc integrates Vim/pandoc document converter
 Plug 'vim-pandoc/vim-pandoc-syntax' "pandoc (markdown) syntax highlight
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'lervag/vimtex'
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'} " for VimPlug latex symbols
+Plug 'Shougo/neco-syntax' "Fuente general de auto completado
 call plug#end()
 
 " ..........................................................
@@ -134,7 +137,12 @@ let g:airline_theme='nord'
 " ## NerdTree
 "
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
-map <F2> :NERDTreeToggle<CR
+map <F2> :NERDTreeToggle<CR>
+
+" tex-conceal
+set conceallevel=2
+let g:tex_conceal='abdmg'
+"hi conceal ctermbg=none
 
 " # Ultisnips
 "
