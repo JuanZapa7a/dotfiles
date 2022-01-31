@@ -21,7 +21,7 @@ urxvtd -o -q -f
 
 
 bspc monitor eDP-1 -d         
-bspc monitor DP-2  -d         
+bspc monitor DP-4  -d         
 
 #bspc monitor DP-1-2  -d         
 

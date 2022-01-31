@@ -9,6 +9,14 @@ super + Return
 super + shift + Return
     gnome-terminal
 
+super + ctrl + Return
+    alacritty
+
+super + alt + Return
+    kitty
+
+
+
 # program launcher
 super + @space
 	
@@ -32,6 +40,18 @@ super + p
     rofi -show power-menu -modi power-menu:rofi-power-menu -width 20
 #rofi -show power-menu -modi power-menu:rofi-power-menu
 # bspwm hotkeys
+
+#brightness
+XF86MonBrightness{Up,Down} 
+    brightnessctl set 5%{+,-}
+
+# volume 
+XF86Audio{Raise,Lower}Volume 
+    pulsemixer --change-volume {+,-}10
+XF86AudioMute 
+    pulsemixer --toggle-mute
+XF86Audio{Play,Prev,Next}
+	playerctl --player=vlc,spotify {play-pause,previous,next}
 #
 
 # quit/restart bspwr
