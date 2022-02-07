@@ -6,13 +6,21 @@ scriptencoding utf-8
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'scrooloose/nerdtree'
+Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
+Plug 'joshdick/onedark.vim'
+Plug 'iCyMind/NeoSolarized'
+Plug 'cocopon/iceberg.vim'
+Plug 'gkeep/iceberg-dark'
+Plug 'dylanaraps/wal.vim'
+Plug 'kyoz/purify', { 'rtp': 'vim' } "rainbow Clean & vibrant color schemes for Vim, Terminals...
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'powerline/powerline'
-Plug 'arcticicestudio/nord-vim' "Nord theme
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons' "Filetype icons for NerdTree
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline' "status bar can be customized
 Plug 'vim-airline/vim-airline-themes' "themes for vim-airline
+Plug 'tpope/vim-fugitive' "Just use to show git status in Vim-Airline
 Plug 'SirVer/ultisnips' "snipets
 Plug 'honza/vim-snippets' "snipets
 Plug 'junegunn/limelight.vim' "dim all lines except the current one when turned on
@@ -22,7 +30,7 @@ Plug 'plasticboy/vim-markdown' "Markdown syntax highlighting
 Plug 'vim-pandoc/vim-pandoc' "pandoc integrates Vim/pandoc document converter
 Plug 'vim-pandoc/vim-pandoc-syntax' "pandoc (markdown) syntax highlight
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex' ", {'tag': 'v1.6'}
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'} " for VimPlug latex symbols
 Plug 'Shougo/neco-syntax' "Fuente general de auto completado
 call plug#end()
@@ -110,13 +118,14 @@ set grepformat=%f:%l:%c:%m
 "https://vim.fandom.com/wiki/Highlight_current_line
 "
 "" # Nord
-colorscheme nord
+"sintax on " required for purify
+colorscheme nord "purify iceberg
 
 "
 set cursorline " Highlight current line
 set cursorcolumn " Highlight current column
-hi CursorLine   cterm=bold "ctermbg=16 ctermfg=214 "guibg=gray guifg=white
-hi CursorColumn cterm=bold "ctermbg=16 ctermfg=214 "guibg=gray guifg=white
+hi CursorLine   cterm=bold "ctermbg=16 "ctermfg=214 "guibg=gray guifg=white
+hi CursorColumn cterm=bold "ctermbg=16 "ctermfg=214 "guibg=gray guifg=white
 
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " typing \c will toggle highlighting on and off
@@ -128,9 +137,13 @@ nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 
 "" ## Airline
 "
-let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiettos (como pestañas)
-let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
-let g:airline_powerline_fonts = 1 " Cargar fuente Powerline y símbolos (ver nota)
+
+" Mostrar buffers abiettos (como pestañas)
+let g:airline#extensions#tabline#enabled = 1  
+" Mostrar sólo el nombre del archivo
+let g:airline#extensions#tabline#fnamemod = ':t'  
+" Cargar fuente Powerline y símbolos (ver nota)
+let g:airline_powerline_fonts = 1 
 "let g:airline_theme= 'icebergDark'
 let g:airline_theme='nord'
 
@@ -139,10 +152,6 @@ let g:airline_theme='nord'
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
 map <F2> :NERDTreeToggle<CR>
 
-" tex-conceal
-set conceallevel=2
-let g:tex_conceal='abdmg'
-"hi conceal ctermbg=none
 
 " # Ultisnips
 "
@@ -239,6 +248,11 @@ let g:vim_markdown_json_frontmatter = 1  " for JSON format
 " # vim-pandoc
 "
 
+" tex-conceal
+set conceallevel=2
+let g:tex_conceal='abdmg'
+hi conceal ctermbg=none
+
 let mapleader="\\"
 
 " Call compile
@@ -268,24 +282,30 @@ noremap <leader>p :call Preview()<CR><CR><CR>
 " map \ + q to compile
 noremap <leader>q :call Compile()<CR><CR>
 
-" # vimlatex
+" ## deoplete
+"
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+"
+" ## vimlatex
 "
 " This is necessary for VimTeX to load properly. The "indent" is optional.
 " Note that most plugin managers will do this automatically.
-filetype plugin indent on
+" filetype plugin indent on
 
 " This enables Vim's and neovim's syntax-related features. Without this, some
 " VimTeX features will not work (see ":help vimtex-requirements" for more
 " info).
-syntax enable
+" syntax enable
 
 " Viewer options: One may configure the viewer either by specifying a built-in
 " viewer method:
-let g:vimtex_view_method = 'zathura'
+" let g:vimtex_view_method = 'skim'
 
 " Or with a generic interface:
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+" let g:vimtex_view_general_viewer = 'okular'
+" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 " VimTeX uses latexmk as the default compiler backend. If you use it, which is
 " strongly recommended, you probably don't need to configure anything. If you
@@ -297,6 +317,21 @@ let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 " let maplocalleader = ","
+
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+let g:matchup_override_vimtex = 1
 "
 " Reformat lines (getting the spacing correct) {{{
 fun! TeX_fmt()
