@@ -6,31 +6,29 @@ scriptencoding utf-8
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
+Plug 'arcticicestudio/nord-vim'  "Nord theme
+" Plug 'shaunsingh/nord.nvim'
 Plug 'joshdick/onedark.vim'
-Plug 'iCyMind/NeoSolarized'
+Plug 'iCymind/NeoSolarized'
+Plug 'scrooloose/nerdtree'
 Plug 'cocopon/iceberg.vim'
 Plug 'gkeep/iceberg-dark'
-Plug 'dylanaraps/wal.vim'
-Plug 'kyoz/purify', { 'rtp': 'vim' } "rainbow Clean & vibrant color schemes for Vim, Terminals...
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons' "Filetype icons for NerdTree
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'powerline/powerline'
+"Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline' "status bar can be customized
 Plug 'vim-airline/vim-airline-themes' "themes for vim-airline
-Plug 'tpope/vim-fugitive' "Just use to show git status in Vim-Airline
+Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips' "snipets
 Plug 'honza/vim-snippets' "snipets
-Plug 'junegunn/limelight.vim' "dim all lines except the current one when turned on
-Plug 'godlygeek/tabular' " tabular plugin is used to format tables
-Plug 'elzr/vim-json' "JSON front matter highlight plugin
-Plug 'plasticboy/vim-markdown' "Markdown syntax highlighting
-Plug 'vim-pandoc/vim-pandoc' "pandoc integrates Vim/pandoc document converter
-Plug 'vim-pandoc/vim-pandoc-syntax' "pandoc (markdown) syntax highlight
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'lervag/vimtex' ", {'tag': 'v1.6'}
+"Plug 'junegunn/limelight.vim' "dim all lines except the current one when turned on
+"Plug 'godlygeek/tabular' " tabular plugin is used to format tables
+"Plug 'elzr/vim-json' "JSON front matter highlight plugin
+"Plug 'plasticboy/vim-markdown' "Markdown syntax highlighting
+"Plug 'vim-pandoc/vim-pandoc' "pandoc integrates Vim/pandoc document converter
+"Plug 'vim-pandoc/vim-pandoc-syntax' "pandoc (markdown) syntax highlight
+"Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'KeitaNakamura/tex-conceal.vim' ", {'for': 'tex'}  for VimPlug latex symbols
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'} " for VimPlug latex symbols
 Plug 'Shougo/neco-syntax' "Fuente general de auto completado
 call plug#end()
@@ -91,7 +89,7 @@ set foldlevel=1
 
 " ## Indent to spaces
 "
-set autoindent
+"set autoindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -118,8 +116,15 @@ set grepformat=%f:%l:%c:%m
 "https://vim.fandom.com/wiki/Highlight_current_line
 "
 "" # Nord
-"sintax on " required for purify
-colorscheme nord "purify iceberg
+<<<<<<< HEAD
+" Example config in Vim-Script
+"let g:nord_contrast = v:true
+"let g:nord_borders = v:false
+"let g:nord_disable_background = v:false
+"let g:nord_italic = v:false
+
+" Load the colorscheme
+colorscheme nord
 
 "
 set cursorline " Highlight current line
@@ -137,7 +142,6 @@ nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 
 "" ## Airline
 "
-
 " Mostrar buffers abiettos (como pestañas)
 let g:airline#extensions#tabline#enabled = 1  
 " Mostrar sólo el nombre del archivo
@@ -152,6 +156,15 @@ let g:airline_theme='nord'
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
 map <F2> :NERDTreeToggle<CR>
 
+" ## VimTex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+"let g:wimtex_quickfix_mode=0
+
+" ## tex-conceal
+set conceallevel=2
+let g:tex_conceal='abdmg'
+hi conceal ctermbg=none
 
 " # Ultisnips
 "
@@ -160,179 +173,141 @@ let g:UltiSnipsExpandTrigger="<tab>"  " use <Tab> to trigger autocompletion
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-" For example, if we type link and then press <Tab>, it will be expanded to the following text:
+
+" ## Deoplete
+" Activar Deoplete al iniciar nvim
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog='/usr/bin/python3'
+" Cerrar automaticamente la ventana de vista previa (donde se muestra
+" documentación si existe)
+augroup deopleteCompleteDoneAu
+  autocmd!
+  autocmd CompleteDone * silent! pclose!
+augroup EN
+
+" let nvim transparent
+"highlight Normal ctermbg=none
+"highlight NonText ctermbg=none
+
+" For example, if we type link and then press <Tab>, it will be expanded
+" to the following text:
 " [Text](http://www.url.com)
 "
-" The setting UltiSnipsJumpForwardTrigger and UltiSnipsJumpBackTrigger set up the shortcut key 
-" to go to next and previous text area of a snippet, making the snippet editing more convenient.
+" The setting UltiSnipsJumpForwardTrigger and UltiSnipsJumpBackTrigger set 
+" up the shortcut key  to go to next and previous text area of a snippet, 
+" making the snippet editing more convenient.
 
-" # Limelight
+"" # Limelight
+""
+"" Limelight [0.0 ~ 1.0] turn on, Limelight! turn off, Limelight!! [0.0 ~ 1.0] Toggle Limelight
+"" Invoke :Limelight for a visual range
+"" nmap <Leader>l <Plug>(Limelight)
+"" xmap <Leader>l <Plug>(Limelight)
 "
-" Limelight [0.0 ~ 1.0] turn on, Limelight! turn off, Limelight!! [0.0 ~ 1.0] Toggle Limelight
-" Invoke :Limelight for a visual range
-" nmap <Leader>l <Plug>(Limelight)
-" xmap <Leader>l <Plug>(Limelight)
-
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-        
-" Default: 0.5
-let g:limelight_default_coefficient = 0.7
-
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-
-" Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-
-" Default: 0.5
-let g:limelight_default_coefficient = 0.7
-
-" Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span = 1
-
-""  Beginning/end of paragraph
-""  When there's no empty line between the paragraphs
-""  and each paragraph starts with indentation
-"  let g:limelight_bop = '^\s'
-"  let g:limelight_eop = '\ze\n^\s'
-
-" Highlighting priority (default: 10)
-"   Set it to -1 not to overrule hlsearch
-let g:limelight_priority = -1
-
-
-" # vim-markdown
+"" Color name (:help cterm-colors) or ANSI code
+"let g:limelight_conceal_ctermfg = 'gray'
+"let g:limelight_conceal_ctermfg = 240
+"        
+"" Default: 0.5
+"let g:limelight_default_coefficient = 0.7
 "
-" It helps us to see the structure of the source code more clearly.
-" It provides a lot of functionalities such as folding, conceal etc
-" Conceal hide the true structure of the sintaxis of markdown
+"" Color name (:help cterm-colors) or ANSI code
+"let g:limelight_conceal_ctermfg = 'gray'
+"let g:limelight_conceal_ctermfg = 240
 "
-" Conceal for me is not good
+"" Color name (:help gui-colors) or RGB color
+"let g:limelight_conceal_guifg = 'DarkGray'
+"let g:limelight_conceal_guifg = '#777777'
 "
-" Shortcuts
-"   ]]: go to next header
-"   [[: go to previous header
-" Command
-"   Toc: create a vertical window of table of contents
-"   TableFormat: format the table under current cursor
-
-" disable header folding
-let g:vim_markdown_folding_disabled = 1
-
-" do not use conceal feature, the implementation is not so good
-let g:vim_markdown_conceal = 0
-
-" disable math tex conceal feature
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-
-" support front matter of various format
-let g:vim_markdown_frontmatter = 1  " for YAML format
-let g:vim_markdown_toml_frontmatter = 1  " for TOML format
-let g:vim_markdown_json_frontmatter = 1  " for JSON format
-
-" # vim-pandoc-syntax
+"" Default: 0.5
+"let g:limelight_default_coefficient = 0.7
 "
-" It provides more syntax highlight and better conceal features
-" t is designed to work with vim-pandoc. To use it as a standalone plugin, we 
-" should add the following settings in our Neovim configuration file:
+"" Number of preceding/following paragraphs to include (default: 0)
+"let g:limelight_paragraph_span = 1
 "
-""augroup pandoc_syntax
-""    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
-"augroup END
-
-" # vim-pandoc
+"""  Beginning/end of paragraph
+"""  When there's no empty line between the paragraphs
+"""  and each paragraph starts with indentation
+""  let g:limelight_bop = '^\s'
+""  let g:limelight_eop = '\ze\n^\s'
 "
+"" Highlighting priority (default: 10)
+""   Set it to -1 not to overrule hlsearch
+"let g:limelight_priority = -1
 
-" tex-conceal
-set conceallevel=2
-let g:tex_conceal='abdmg'
-hi conceal ctermbg=none
 
-let mapleader="\\"
-
-" Call compile
-" Open the PDF from /tmp/
-function! Preview()
-        :call Compile()<CR><CR>
-        execute "! zathura /tmp/op.pdf &"
-endfunction
-
-" [1] Get the extension of the file
-" [2] Apply appropriate compilation command
-" [3] Save PDF as /tmp/op.pdf
-function! Compile()
-        let extension = expand('%:e')
-        if extension == "ms"
-                execute "! groff -ms % -T pdf > /tmp/op.pdf"
-        elseif extension == "tex"
-                execute "! pandoc -f latex -t latex % -o /tmp/op.pdf"
-        elseif extension == "md"
-                execute "! pandoc % -s -o /tmp/op.pdf"
-        endif
-endfunction
-
-" map \ + p to preview
-noremap <leader>p :call Preview()<CR><CR><CR>
-
-" map \ + q to compile
-noremap <leader>q :call Compile()<CR><CR>
-
-" ## deoplete
+"" # vim-markdown
+""
+"" It helps us to see the structure of the source code more clearly.
+"" It provides a lot of functionalities such as folding, conceal etc
+"" Conceal hide the true structure of the sintaxis of markdown
+""
+"" Conceal for me is not good
+""
+"" Shortcuts
+""   ]]: go to next header
+""   [[: go to previous header
+"" Command
+""   Toc: create a vertical window of table of contents
+""   TableFormat: format the table under current cursor
 "
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
+"" disable header folding
+"let g:vim_markdown_folding_disabled = 1
 "
-" ## vimlatex
+"" do not use conceal feature, the implementation is not so good
+"let g:vim_markdown_conceal = 0
 "
-" This is necessary for VimTeX to load properly. The "indent" is optional.
-" Note that most plugin managers will do this automatically.
-" filetype plugin indent on
-
-" This enables Vim's and neovim's syntax-related features. Without this, some
-" VimTeX features will not work (see ":help vimtex-requirements" for more
-" info).
-" syntax enable
-
-" Viewer options: One may configure the viewer either by specifying a built-in
-" viewer method:
-" let g:vimtex_view_method = 'skim'
-
-" Or with a generic interface:
-" let g:vimtex_view_general_viewer = 'okular'
-" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-
-" VimTeX uses latexmk as the default compiler backend. If you use it, which is
-" strongly recommended, you probably don't need to configure anything. If you
-" want another compiler backend, you can change it as follows. The list of
-" supported backends and further explanation is provided in the documentation,
-" see ":help vimtex-compiler".
-" let g:vimtex_compiler_method = 'latexrun'
-
-" Most VimTeX mappings rely on localleader and this can be changed with the
-" following line. The default is usually fine and is the symbol "\".
-" let maplocalleader = ","
-
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-let g:vimtex_compiler_latexmk = {
-    \ 'options' : [
-    \   '-pdf',
-    \   '-shell-escape',
-    \   '-verbose',
-    \   '-file-line-error',
-    \   '-synctex=1',
-    \   '-interaction=nonstopmode',
-    \ ],
-    \}
-let g:matchup_override_vimtex = 1
+"" disable math tex conceal feature
+"let g:tex_conceal = ""
+"let g:vim_markdown_math = 1
 "
+"" support front matter of various format
+"let g:vim_markdown_frontmatter = 1  " for YAML format
+"let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+"let g:vim_markdown_json_frontmatter = 1  " for JSON format
+"
+"" # vim-pandoc-syntax
+""
+"" It provides more syntax highlight and better conceal features
+"" t is designed to work with vim-pandoc. To use it as a standalone plugin, we 
+"" should add the following settings in our Neovim configuration file:
+""
+"""augroup pandoc_syntax
+"""    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+""augroup END
+"
+"" # vim-pandoc
+""
+"
+"let mapleader="\\"
+"
+"" Call compile
+"" Open the PDF from /tmp/
+"function! Preview()
+"        :call Compile()<CR><CR>
+"        execute "! zathura /tmp/op.pdf &"
+"endfunction
+"
+"" [1] Get the extension of the file
+"" [2] Apply appropriate compilation command
+"" [3] Save PDF as /tmp/op.pdf
+"function! Compile()
+"        let extension = expand('%:e')
+"        if extension == "ms"
+"                execute "! groff -ms % -T pdf > /tmp/op.pdf"
+"        elseif extension == "tex"
+"                execute "! pandoc -f latex -t latex % -o /tmp/op.pdf"
+"        elseif extension == "md"
+"                execute "! pandoc % -s -o /tmp/op.pdf"
+"        endif
+"endfunction
+"
+"" map \ + p to preview
+"noremap <leader>p :call Preview()<CR><CR><CR>
+"
+"" map \ + q to compile
+"noremap <leader>q :call Compile()<CR><CR>
+
 " Reformat lines (getting the spacing correct) {{{
 fun! TeX_fmt()
     if (getline(".") != "")
