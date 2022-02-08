@@ -29,6 +29,7 @@ Plug 'honza/vim-snippets' "snipets
 "Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'KeitaNakamura/tex-conceal.vim' ", {'for': 'tex'}  for VimPlug latex symbols
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'} " for VimPlug latex symbols
 Plug 'Shougo/neco-syntax' "Fuente general de auto completado
 call plug#end()
 
@@ -115,6 +116,7 @@ set grepformat=%f:%l:%c:%m
 "https://vim.fandom.com/wiki/Highlight_current_line
 "
 "" # Nord
+<<<<<<< HEAD
 " Example config in Vim-Script
 "let g:nord_contrast = v:true
 "let g:nord_borders = v:false
@@ -127,8 +129,8 @@ colorscheme nord
 "
 set cursorline " Highlight current line
 set cursorcolumn " Highlight current column
-hi CursorLine   term=bold cterm=bold "ctermbg=16 ctermfg=214 "guibg=gray guifg=white
-"hi CursorColumn cterm=bold "ctermbg=16 ctermfg=214 "guibg=gray guifg=white
+hi CursorLine   cterm=bold "ctermbg=16 "ctermfg=214 "guibg=gray guifg=white
+hi CursorColumn cterm=bold "ctermbg=16 "ctermfg=214 "guibg=gray guifg=white
 
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " typing \c will toggle highlighting on and off
@@ -140,9 +142,12 @@ nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 
 "" ## Airline
 "
-let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
-let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
-let g:airline_powerline_fonts = 1 " Cargar fuente Powerline y símbolos (ver nota)
+" Mostrar buffers abiettos (como pestañas)
+let g:airline#extensions#tabline#enabled = 1  
+" Mostrar sólo el nombre del archivo
+let g:airline#extensions#tabline#fnamemod = ':t'  
+" Cargar fuente Powerline y símbolos (ver nota)
+let g:airline_powerline_fonts = 1 
 "let g:airline_theme= 'icebergDark'
 let g:airline_theme='nord'
 
@@ -303,36 +308,6 @@ augroup EN
 "" map \ + q to compile
 "noremap <leader>q :call Compile()<CR><CR>
 
-" # vimlatex
-"
-" This is necessary for VimTeX to load properly. The "indent" is optional.
-" Note that most plugin managers will do this automatically.
-"filetype plugin indent on
-
-" This enables Vim's and neovim's syntax-related features. Without this, some
-" VimTeX features will not work (see ":help vimtex-requirements" for more
-" info).
-"syntax enable
-
-" Viewer options: One may configure the viewer either by specifying a built-in
-" viewer method:
-"let g:vimtex_view_method = 'zathura'
-
-" Or with a generic interface:
-"let g:vimtex_view_general_viewer = 'okular'
-"let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-
-" VimTeX uses latexmk as the default compiler backend. If you use it, which is
-" strongly recommended, you probably don't need to configure anything. If you
-" want another compiler backend, you can change it as follows. The list of
-" supported backends and further explanation is provided in the documentation,
-" see ":help vimtex-compiler".
-" let g:vimtex_compiler_method = 'latexrun'
-
-" Most VimTeX mappings rely on localleader and this can be changed with the
-" following line. The default is usually fine and is the symbol "\".
-" let maplocalleader = ","
-"
 " Reformat lines (getting the spacing correct) {{{
 fun! TeX_fmt()
     if (getline(".") != "")
