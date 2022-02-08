@@ -25,7 +25,7 @@
 !#define nord4 #D8DEE9
 !! White
 !#define nord5 #E5E9F0
-!! white Brifght
+!! white Bright
 !#define nord6 #ECEFF4
 !
 !! Frost can be described as the heart palette of Nord, a group of four 
@@ -91,27 +91,27 @@
 
 ! red
 *.color1:       #bf616a
-*.color9:       #bf616a
+*.color9:       #d07582
 
 ! green
 *.color2:       #a3be8c
-*.color10:      #a3be8c
+*.color10:      #b4d2a4
 
 ! yellow
 *.color3:       #ebcb8b
-*.color11:      #ebcb8b
+*.color11:      #fcdfa3
 
 ! blue
 *.color4:       #81a1c1
-*.color12:      #81a1c1
+*.color12:      #92b5d9
 
 ! magenta
 *.color5:       #b48ead
-*.color13:      #b48ead
+*.color13:      #c5a2c5
 
 ! cyan
 *.color6:       #88c0d0
-*.color14:      #8fbcbb
+*.color14:      #99d4e8
 
 ! white
 *.color7:       #e5e9f0
@@ -246,13 +246,19 @@
 !
 !
 !Character Fonts
-!URxvt*font: xft:Operator Mono for Powerline:style=Book:size=14:pixelsize=20:antialias=true,xft:MesloLGS NF:style=Regular:size=14:pixelsize=20:antialias=true
+!URxvt*font: xft:Operator Mono for Powerline:style=Book:size=20, xft:MesloLGS NF:style=Regular:pixelsize=20
+
+!!URxvt*font: xft:Meslo iCursive S12:pixelsize=20, xft:MesloLGS NF:pixelsize=20
+
+!URxvt*font: xft:Meslo iCursive S12:style=Regular:pixelsize=20
+
+URxvt*font: xft:MesloLGS NF:style=Regular:pixelsize=20
 
 !:style=Book:size=9:pixelsize=15:antialias=true
 !URxvt*font: xft:Operator Mono:style=Book:size=8:pixelsize=24:antialias=true,xft:MesloLGS NF:style=Regular:size=10:pixelsize=20:antialias=true
 !URxvt*font: xft:Operator Mono:style=Book:size=14:pixelsize=30:antialias=true,xft:Hack NF:style=Medium:size=14:pixelsize=30:antialias=true
 
-URxvt*font: xft:Operator Mono for Powerline:style=Book:size=20,xft:MesloLGS NF:style=Regular:size=20,xft:SauceCodePro NF:style=Medium:size=20,xft:Inconsolata Nerd Font:style=Regular:size=20,xft:Hack NF:style=Regular:size=20
+!URxvt*font: xft:Operator Mono for Powerline:style=Book:size=20:pixelsize=20,xft:MesloLGS NF:style=Regular:pixelsize=20,xft:SauceCodePro NF:style=Medium:size=20,xft:Inconsolata Nerd Font:style=Regular:size=20,xft:Hack NF:style=Regular:size=20
 !URxvt*font: xft:Operator Mono for Powerline:style=Book,xft:Inconsolata,xft:Hack NF,xft:MesloLGS NF,xft:SauceCodePro NF
 !URxvt*font: xft:MesloLGS NF:style=Regular:size=14:pixelsize=20:antialias=true
 !URxvt*font: xft:MesloLGS NF:style=Regular:size=20
