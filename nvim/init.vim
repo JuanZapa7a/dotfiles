@@ -116,7 +116,6 @@ set grepformat=%f:%l:%c:%m
 "https://vim.fandom.com/wiki/Highlight_current_line
 "
 "" # Nord
-<<<<<<< HEAD
 " Example config in Vim-Script
 "let g:nord_contrast = v:true
 "let g:nord_borders = v:false
