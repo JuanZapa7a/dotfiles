@@ -33,7 +33,8 @@ ln -sf "$HOME/dotfiles/neofetch/config.conf" "$HOME/.config/neofetch/config.conf
 
 # ~/.local/bin/bing.sh
 mkdir -p "$HOME/.local/bin"
-ln -sf "$HOME/dotfiles/.local/bin/bing.sh" "$HOME/.local/bin/bing.sh" 
+ln -sf "$HOME/dotfiles/.local/bin/bing.sh" "$HOME/.local/bin/bing.sh"
+ln -sf "$HOME/dotfiles/.local/bin/rofi-power-menu.sh" "$HOME/.local/bin/rofi-power-menu.sh" 
 
 # ~/.local/share/rofi/themes
 mkdir -p "$HOME/.local/share/rofi/themes"

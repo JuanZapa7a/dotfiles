@@ -127,6 +127,8 @@ xterm-256color=
 
 alacritty=
 
+xterm-kitty=
+
 [Panels]
 show_mini_info=true
 kilobyte_si=false
