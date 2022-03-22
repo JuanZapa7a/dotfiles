@@ -154,7 +154,7 @@ date
 # problem with mc running in alacritty solved using tmux or this alias
 alias mc='mc -x'
 # bat is cat with wings
-alias cat='bat'
+alias cat='batcat'
 
 alias gru='sshfs -p6536 juan@212.128.45.104:/opt/juan /home/juan/gru'
 alias ugru='fusermount -u /home/juan/gru'
@@ -163,6 +163,12 @@ alias cgru='ssh -p6536 -Y juan@212.128.45.104'
 alias aorus='sshfs -p22 juan@212.128.45.18:/media/ST4000/juan /home/juan/aorus'
 alias uaorus='fusermount -u /home/juan/aorus'
 alias caorus='ssh -p22 -Y juan@212.128.45.18'
+
+alias jupytergoogle='jupyter-notebook --no-browser --NotebookApp.allow_origin='https://colab.research.google.com' \
+  --port=8888 \
+  --NotebookApp.port_retries=0'
+alias jupyterhost='jupyter-notebook --no-browser --port=8888'
+alias pip-upgrade-venv="pip freeze | cut -d'=' -f1 | xargs -n1 pip install -U"
 
 ## for powerlevel10k
 source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
