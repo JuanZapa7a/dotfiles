@@ -18,5 +18,13 @@ onedrive() {
 }
 uonedrive(){
     fusermount -u /home/juan/OneDrive
-}            
+}
+
+musica() {
+    sshfs -p22 juan@212.128.45.18:/media/ST4000/juan/Música /home/juan/Música
+}
+umusica(){
+    fusermount -u /home/juan/Música
+}
+
            
