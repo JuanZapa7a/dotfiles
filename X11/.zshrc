@@ -160,15 +160,18 @@ alias gru='sshfs -p6536 juan@212.128.45.104:/opt/juan /home/juan/gru'
 alias ugru='fusermount -u /home/juan/gru'
 alias cgru='ssh -p6536 -Y juan@212.128.45.104'
 #
-alias aorus='sshfs -p22 juan@212.128.45.18:/media/ST4000/juan /home/juan/aorus'
-alias uaorus='fusermount -u /home/juan/aorus'
-alias caorus='ssh -p22 -Y juan@212.128.45.18'
+alias a-orus='sshfs -p22 juan@212.128.45.18:/media/ST4000/juan /media/juan'
+alias u-aorus='fusermount -u /media/juan'
+alias caorus='ssh -Y aorus'
 
 alias jupytergoogle='jupyter-notebook --no-browser --NotebookApp.allow_origin='https://colab.research.google.com' \
   --port=8888 \
   --NotebookApp.port_retries=0'
 alias jupyterhost='jupyter-notebook --no-browser --port=8888'
+#alias jupyterlocal='ssh -p22 juan@212.128.45.18 -NL 8888:localhost:8888'
 alias pip-upgrade-venv="pip freeze | cut -d'=' -f1 | xargs -n1 pip install -U"
+
+alias ltspice='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
 
 ## for powerlevel10k
 source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
@@ -209,3 +212,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/juan/perl5"; export PERL_MM_OPT;
 
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
+export PATH=$PATH:/home/juan/.spicetify
+
+source /home/juan/.config/broot/launcher/bash/br

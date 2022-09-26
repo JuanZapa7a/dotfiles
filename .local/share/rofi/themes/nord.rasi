@@ -17,7 +17,9 @@
 	separatorcolor				: @active-background;
 	bordercolor					: @active-background;
 	lines						: 8;
-}
+  columns         : 1;
+  text-color      : @foreground;
+ }
 
 #window {
 	background-color			: @background;
@@ -25,6 +27,7 @@
 	border-radius				: 0px;
 	border-color				: @bordercolor;
 	padding						: 0px;
+  width           : 1000;
 }
 #mainbox {
 	border						: 0px;

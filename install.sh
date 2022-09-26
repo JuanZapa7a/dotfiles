@@ -76,5 +76,8 @@ ln -sf "$HOME/dotfiles/bspwm/bspwmrc" "$HOME/.config/bspwm/bspwmrc"
 mkdir -p "$HOME/.zsh_functions"
 ln -sf "$HOME/dotfiles/.zsh_functions/scripts.sh" "$HOME/.zsh_functions/scripts.sh"
 
+# ~/.config/spicetify
+mkdir -p "$HOME/.config/spicetify"
+ln -sf "$HOME/dotfiles/spicetify/config-xpui.ini" "$HOME/.config/spicetify/config-xpui.ini" 
 
 

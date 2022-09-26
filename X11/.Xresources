@@ -121,7 +121,7 @@
 !! MySpecial NORD
 *.foreground:   #d8dee9
 *.background:   #2e3440
-*.cursorColor:  #d8dee9
+*.cursorColor:  #81a1c1
 *fading:        0
 *fadeColor:     #4c566a
 
@@ -357,3 +357,4 @@ URxvt*tabbedex.transparent:true
 URxvt*tabbedex.new-button: false
 URxvt.tabbedex.reopen-on-close:no
 URxvt*tabbedex.title:false
+

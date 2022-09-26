@@ -4,30 +4,40 @@
 
 # terminal emulator
 super + Return
-	urxvtc
+	  alacritty
 
 super + shift + Return
     gnome-terminal
 
 super + ctrl + Return
-    alacritty
+    urxvtc
 
 super + alt + Return
     kitty
 
+# screenshot (screen, window, area
+Print
+    scrot -e 'mv $f ~/Imágenes/'
 
+super + Print
+    scrot --focused -e 'mv $f ~/Imágenes/'
+
+alt + Print
+  scrot --line style=dash,width=3 --select --freeze --quality 100  -e 'mv $f ~/Imágenes/' 
 
 # program launcher
 super + @space
+    rofi -combi-modi drun,window,ssh -show combi -modi combi -matching fuzzy
 	
-# program launcher
 super + d
     dmenu_run
 
 super + Escape 
     rofi -modi run -show run
+
 super +i 
     rofi -modi run -show drun -show-icons
+
 super + Tab 
     rofi -show window -show-icons
 
@@ -37,10 +47,11 @@ super + c
 
 #Powermenu
 super + p
-    rofi -show power-menu -modi power-menu:rofi-power-menu -width 20
-#rofi -show power-menu -modi power-menu:rofi-power-menu
-# bspwm hotkeys
+    rofi -show power-menu -modi power-menu:rofi-power-menu -width 20 -lines 6
 
+
+# bspwm hotkeys
+#
 #brightness
 XF86MonBrightness{Up,Down} 
     brightnessctl set 5%{+,-}
@@ -48,12 +59,13 @@ XF86MonBrightness{Up,Down}
 # volume 
 XF86Audio{Raise,Lower}Volume 
     pulsemixer --change-volume {+,-}10
+
 XF86AudioMute 
     pulsemixer --toggle-mute
+
 XF86Audio{Play,Prev,Next}
 	playerctl --player=vlc,spotify {play-pause,previous,next}
 #
-
 # quit/restart bspwr
 super + shift + {x,r}
 	bspc {quit,wm -r}
@@ -76,7 +88,6 @@ super + g
 
 #
 # state/flags
-#
 
 # set the window state
 super + {t,shift + t,s,f}
@@ -88,7 +99,6 @@ super + ctrl + {m,x,y,z}
 
 #
 # focus/swap
-#
 
 # focus the node/swap in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -98,7 +108,7 @@ super + {_,shift +} {Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + shift + {p,b,comma,period}
+super + shift + {p,b,comma,perio}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
@@ -163,7 +173,6 @@ super + alt + shift + {h,j,k,l}
 
 super + alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
 
 # move a floating window
 super + {Left,Down,Up,Right}
