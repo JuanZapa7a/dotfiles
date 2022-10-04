@@ -17,6 +17,8 @@
 	separatorcolor				: @active-background;
 	bordercolor					: @active-background;
 	lines						: 8;
+  text-color					: @foreground;
+
 }
 
 #window {

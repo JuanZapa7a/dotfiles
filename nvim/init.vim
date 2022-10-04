@@ -118,8 +118,8 @@ colorscheme nord
 "
 set cursorline " Highlight current line
 set cursorcolumn " Highlight current column
-hi CursorLine   cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
-hi CursorColumn cterm=bold ctermbg=16 ctermfg=214 "guibg=gray guifg=white
+hi CursorLine   cterm=bold "ctermbg=16 ctermfg=214 guibg=gray guifg=white
+hi CursorColumn cterm=bold "ctermbg=16 ctermfg=214 guibg=gray guifg=white
 
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 " typing \c will toggle highlighting on and off
@@ -316,7 +316,7 @@ let g:deoplete#enable_at_startup = 1
 " let maplocalleader = ","
 
 let g:tex_flavor='latex'
-let g:vimtex_view_method='skim'
+let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 
 " Reformat lines (getting the spacing correct) {{{

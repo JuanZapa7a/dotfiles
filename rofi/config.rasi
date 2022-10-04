@@ -1,4 +1,4 @@
 configuration {
-	theme: "~/.local/share/rofi/themes/nord.rasi";
 }
+@theme "~/.local/share/rofi/themes/nord.rasi"
 @import "/home/juan/.local/share/rofi/themes/nord.rasi"

@@ -4,30 +4,40 @@
 
 # terminal emulator
 super + Return
-	urxvtc
+  alacritty
 
 super + shift + Return
-    gnome-terminal
+  gnome-terminal
 
 super + ctrl + Return
-    alacritty
+  urxvtc
 
 super + alt + Return
-    kitty
+  kitty
 
+# screenshot (screen, window, area
+Print
+    scrot -e 'mv $f ~/Imágenes/'
 
+super + Print
+    scrot --focused -e 'mv $f ~/Imágenes/'
+
+alt + Print
+  scrot --line style=dash,width=3 --select --freeze --quality 100  -e 'mv $f ~/Imágenes/'
 
 # program launcher
 super + @space
+    rofi -combi-modi drun,window,ssh -show combi -modi combi -matching fuzzy
 	
-# program launcher
 super + d
     dmenu_run
 
 super + Escape 
     rofi -modi run -show run
+
 super +i 
     rofi -modi run -show drun -show-icons
+
 super + Tab 
     rofi -show window -show-icons
 

@@ -160,8 +160,8 @@ alias gru='sshfs -p6536 juan@212.128.45.104:/opt/juan /home/juan/gru'
 alias ugru='fusermount -u /home/juan/gru'
 alias cgru='ssh -p6536 -Y juan@212.128.45.104'
 #
-alias aorus='sshfs -p22 juan@212.128.45.18:/media/ST4000/juan /home/juan/aorus'
-alias uaorus='fusermount -u /home/juan/aorus'
+alias a-orus='sshfs -p22 juan@212.128.45.18:/media/ST4000/juan /media/juan'
+alias u-aorus='fusermount -u /media/juan'
 alias caorus='ssh -p22 -Y juan@212.128.45.18'
 
 ## for powerlevel10k
@@ -203,3 +203,5 @@ PERL_MM_OPT="INSTALL_BASE=/home/juan/perl5"; export PERL_MM_OPT;
 
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
+
+source /home/juan/.config/broot/launcher/bash/br

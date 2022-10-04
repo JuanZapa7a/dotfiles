@@ -293,7 +293,7 @@
 !URxvt*font: xft:Meslo iCursive S12:style=Regular:pixelsize=20
 
 URxvt*font: xft:MesloLGS NF:style=Regular:pixelsize=20
-
+!URxvt*font: xft:Space Mono fSpace Mono for Powerline:style=Regular:pixelsize=20
 !:style=Book:size=9:pixelsize=15:antialias=true
 !URxvt*font: xft:Operator Mono:style=Book:size=8:pixelsize=24:antialias=true,xft:MesloLGS NF:style=Regular:size=10:pixelsize=20:antialias=true
 !URxvt*font: xft:Operator Mono:style=Book:size=14:pixelsize=30:antialias=true,xft:Hack NF:style=Medium:size=14:pixelsize=30:antialias=true
